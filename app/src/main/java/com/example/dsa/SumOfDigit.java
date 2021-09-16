@@ -75,4 +75,32 @@ public class SumOfDigit {
         }
 
     }
+
+    //A Harshad number is one which is divisible by sum of its digits e.g 21 =  2+ 1 = 3 -> 21/3 = 7
+    public void isHarshdNumber() {
+
+        int number  = 171;
+
+        int copyNumber =  number;
+
+        int sum =0;
+        int r = 0;
+
+        //Calculate the sum of the digits
+        while(number > 0) {
+             r = number % 10;
+
+             sum = sum + r;
+
+             number = number /10;
+
+        }
+
+        if(copyNumber % sum ==0) {
+            Log.v("===>>>" ,copyNumber +" is Harshad number");
+        } else {
+            Log.v("===>>>" ,copyNumber +" is not Harshad number");
+        }
+
+    }
 }

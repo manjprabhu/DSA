@@ -17,8 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         PrimeNumber primeNumber = new PrimeNumber();
 
-        primeNumber.GetFirstNPrimeNumber();
-
+        sumOfDigit.isHarshdNumber();
 
     }
 
