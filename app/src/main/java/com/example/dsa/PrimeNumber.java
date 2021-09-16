@@ -23,7 +23,6 @@ public class PrimeNumber {
     }
 
 
-
     public void GetFirstNPrimeNumber() {
 
         int n = 10; // get first "n" prime numbers
@@ -34,18 +33,14 @@ public class PrimeNumber {
 
             if(isPrime(number)) {
                 count++;
-                Log.v("===>>>" ,"NUmber:"+ number);
+                Log.v("===>>>" ,"Number:"+ number);
             }
             number++;
         }
-
-
-
-
     }
 
     private boolean isPrime(int number) {
-        for (int l = 2; l < number / 2; l++) {
+        for (int l = 2; l <= number / 2; l++) {
             if (number % l == 0) {
                 return false;
             }
