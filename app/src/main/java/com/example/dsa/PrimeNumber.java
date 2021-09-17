@@ -83,4 +83,41 @@ public class PrimeNumber {
         }
     }
 
+    //Sum of all the prime number upto the given upper limit "upperLimit"
+    public void SumOfInitialNPrimeNumbers() {
+        int sum = 0;
+        int number = 2;
+        int upperLimit = 13;
+
+        while (number <= upperLimit) {
+
+            if (isPrime(number)) {
+                sum = sum + number;
+                Log.v("===>>>", "number:" + number);
+            }
+            number++;
+        }
+        Log.v("===>>>", "Sum of prime Numbers:" + sum);
+
+    }
+
+    //Find first n Twin prime numbers (3,5) ,(5,7) ,(11,13)
+    public void firstNTwinPrimeNumber() {
+        int n = 10; // First n twin prime numbers
+        int number = 2;
+
+        int first, second, count = 0;
+
+        while (count < n) {
+            first = number;
+            second = first + 2;
+
+            if (isPrime(first) && isPrime(second)) {
+                count++; // counter to hold the number of twin prime pairs
+                Log.v("===>>>", "(" + first + " " + second + ") are twin prime");
+            }
+            number++; // check for next number whtr it is a prime;
+        }
+    }
+
 }

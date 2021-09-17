@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         PrimeNumber primeNumber = new PrimeNumber();
 
-        primeNumber.primeNumbersBetween2Numbers();
+        primeNumber.firstNTwinPrimeNumber();
     }
 
     private void findsmallestNumber() {
