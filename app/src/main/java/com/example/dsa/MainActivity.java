@@ -17,7 +17,11 @@ public class MainActivity extends AppCompatActivity {
 
         PrimeNumber primeNumber = new PrimeNumber();
 
-        primeNumber.firstNTwinPrimeNumber();
+        ArrayAlgo arrayAlgo = new ArrayAlgo();
+
+        arrayAlgo.countTheOccurrence();
+
+
     }
 
     private void findsmallestNumber() {
