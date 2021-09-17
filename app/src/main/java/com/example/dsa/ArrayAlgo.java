@@ -73,4 +73,32 @@ public class ArrayAlgo {
             }
         }
     }
+
+    public void largestNumber() {
+        int[] a = {11, 5, 7, 5, 2, 4, 3, 3, -1};
+
+        int largest  = Integer.MIN_VALUE;
+
+        for(int k =0;k<a.length;k++) {
+
+            if(a[k] > largest) {
+                largest = a[k];
+            }
+        }
+        Log.v("===>>>" ,"Largest number is :" + largest);
+    }
+
+    public void smallestNumber() {
+        int[] a = {11, 5, 7, 5, 2, 4, 3, -13, -1};
+
+        int smallest = Integer.MAX_VALUE;
+
+        for(int k=0;k<a.length;k++) {
+
+            if(a[k] < smallest) {
+                smallest = a[k];
+            }
+        }
+        Log.v("===>>>" ,"Smallest number is :" + smallest);
+    }
 }

@@ -19,24 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAlgo arrayAlgo = new ArrayAlgo();
 
-        arrayAlgo.pairWithGivenSum();
-
-        arrayAlgo.reverseArray();
+        arrayAlgo.smallestNumber();
 
 
-    }
-
-    private void findsmallestNumber() {
-        int a[] = {10, 2, 54, -76, 19, 30, 77};
-        int smallest = Integer.MAX_VALUE;
-
-        for (int k = 0; k < a.length; k++) {
-
-            if (a[k] < smallest) {
-                smallest = a[k];
-            }
-        }
-        Log.v("Main", "===>>> Smallest:" + smallest);
     }
 
     private void secondSmallestElement() {
@@ -56,19 +41,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Log.v("Main", "===>>> Smallest:" + smallest + "  secondSmallest: " + secondSmallest);
-    }
-
-    private void largestElement() {
-        int a[] = {10, 2, -54, 676, 19, 30, 77};
-        int largest = Integer.MIN_VALUE;
-
-        for (int k = 0; k < a.length; k++) {
-
-            if (a[k] > largest) {
-                largest = a[k];
-            }
-        }
-        Log.v("Main", "===>>> largest:" + largest);
     }
 
     private void secondLargest() {
