@@ -17,28 +17,60 @@ public class ArrayAlgo {
         int[] arr = {1, 3, 4, 6, 6, 8, 9, 9, 8, 8};
 
         HashMap<Integer, Integer> countMap = new HashMap<>();
-        int count = 0;
+        int count;
 
-        for (int k = 0; k < arr.length; k++) {
+        for (int i : arr) {
 
-            if (countMap.containsKey(arr[k])) {
-                count = countMap.get(arr[k]);
+            if (countMap.containsKey(i)) {
+                count = countMap.get(i);
                 count++;
-                countMap.put(arr[k], count);
+                countMap.put(i, count);
             } else {
-                countMap.put(arr[k], 1);
+                countMap.put(i, 1);
             }
         }
 
         Iterator iterator = countMap.entrySet().iterator();
 
         while (iterator.hasNext()) {
-            Log.v("===>>>" ,""+iterator.next());
+            Log.v("===>>>", "" + iterator.next());
         }
 
-        for(Map.Entry entry : countMap.entrySet()) {
-            Log.v("===>>" ,entry.getKey() + " occurred " + entry.getValue() + " times");
+        for (Map.Entry entry : countMap.entrySet()) {
+            Log.v("===>>", entry.getKey() + " occurred " + entry.getValue() + " times");
 
+        }
+    }
+
+    public void reverseArray() {
+        int[] a = {1, 3, 6, 8, 2, 4, 6, 8, 11};
+
+        for (int k = 0; k < a.length / 2; k++) {
+
+            int temp = a[k];
+
+            a[k] = a[a.length - 1 - k];
+
+            a[a.length - 1 - k] = temp;
+        }
+
+        for (int j : a) {
+            Log.v("===>>> ", " Element:" + j);
+        }
+    }
+
+    public void pairWithGivenSum() {
+        int[] a = {1, 5, 7, 5, 2, 4, 3, 3, -1};
+        int sum = 6;
+
+        for (int i = 0; i < a.length; i++) {
+
+            for (int j = i + 1; j < a.length; j++) {
+
+                if (a[i] + a[j] == sum) {
+                    Log.v("===>> ", a[i] + " and " + a[j] + " makes sum: " + sum);
+                }
+            }
         }
     }
 }

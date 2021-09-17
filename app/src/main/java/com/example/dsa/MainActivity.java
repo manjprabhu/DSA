@@ -19,7 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAlgo arrayAlgo = new ArrayAlgo();
 
-        arrayAlgo.countTheOccurrence();
+        arrayAlgo.pairWithGivenSum();
+
+        arrayAlgo.reverseArray();
 
 
     }
@@ -85,32 +87,4 @@ public class MainActivity extends AppCompatActivity {
         Log.v("Main", "===>>> largest:" + largest + "  secondLargest: " + secondLargest);
     }
 
-    private void reverseArray() {
-        int a[] = {10, 2, -54, 76, 19, 30, 77};
-
-        for (int k = 0; k <= (a.length / 2); k++) {
-            int temp = a[k];
-            a[k] = a[a.length - 1 - k];
-            a[a.length - 1 - k] = temp;
-        }
-
-        for (int i = 0; i < a.length; i++) {
-            Log.v("Main", "===>>> :" + a[i]);
-        }
-    }
-
-    private void findPairwithGivenSum() {
-        int[] a = {1, 5, 7, 2, 4, 3, 3};
-        int sum = 6;
-
-        for (int k = 0; k < a.length; k++) {
-
-            for (int j = k + 1; j < a.length; j++) {
-
-                if (a[k] + a[j] == sum) {
-                    Log.v("Main", "===>>> Pair :" + a[k] + " And " + a[j]);
-                }
-            }
-        }
-    }
 }
