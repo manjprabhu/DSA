@@ -11,7 +11,7 @@ public class ArrayAlgo {
     public ArrayAlgo() {
     }
 
-    //Count the occurrence of each number in an array
+    //    Count the occurrence of each number in an array
     public void countTheOccurrence() {
 
         int[] arr = {1, 3, 4, 6, 6, 8, 9, 9, 8, 8};
@@ -42,6 +42,7 @@ public class ArrayAlgo {
         }
     }
 
+    //    Reverse the given array
     public void reverseArray() {
         int[] a = {1, 3, 6, 8, 2, 4, 6, 8, 11};
 
@@ -59,6 +60,7 @@ public class ArrayAlgo {
         }
     }
 
+    //    Find all the pair of number in a given array whose sum is given number.
     public void pairWithGivenSum() {
         int[] a = {1, 5, 7, 5, 2, 4, 3, 3, -1};
         int sum = 6;
@@ -74,6 +76,7 @@ public class ArrayAlgo {
         }
     }
 
+    //    Find the largest element in an given array
     public void largestNumber() {
         int[] a = {11, 5, 7, 5, 2, 4, 3, 3, -1};
 
@@ -88,6 +91,7 @@ public class ArrayAlgo {
         Log.v("===>>>", "Largest number is :" + largest);
     }
 
+    //    Find  the smallest element in an given array
     public void smallestNumber() {
         int[] a = {11, 5, 7, 5, 2, 4, 3, -13, -1};
 
@@ -102,6 +106,7 @@ public class ArrayAlgo {
         Log.v("===>>>", "Smallest number is :" + smallest);
     }
 
+    //    Find the Largest and second Second largest element in an array
     public void secondLargest() {
         int[] a = {-1, -5, -7, -5, -2, -41, 3, -13, -1};
 
@@ -121,6 +126,7 @@ public class ArrayAlgo {
         Log.v("===>>>", "Second Largest number is :" + secondLargest);
     }
 
+    //    Find the Smallest and second smallest element in an array
     public void secondSmallest() {
         int[] a = {11, 5, 7, 5, 2, 4, 3, -13, -1};
 

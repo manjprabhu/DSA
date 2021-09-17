@@ -7,6 +7,7 @@ public class SumOfDigit {
     public SumOfDigit() {
     }
 
+    //    Sum of all the digits of the given number.
     public void sumOfDigit() {
         int num = 123456;
 
@@ -23,6 +24,7 @@ public class SumOfDigit {
         Log.v("===>>", " Sum:" + sum);
     }
 
+    //    Reverse the given number.
     public void reverseTheNumber() {
 
         int num = 123;
@@ -43,6 +45,7 @@ public class SumOfDigit {
 
     }
 
+    //    Check if given number is Magic number.
     public void isMagicNumber() {
 
         int n = 163, number = 163;
@@ -77,26 +80,26 @@ public class SumOfDigit {
     //A Harshad number is one which is divisible by sum of its digits e.g 21 =  2+ 1 = 3 -> 21/3 = 7
     public void isHarshadNumber() {
 
-        int number  = 171;
+        int number = 171;
 
-        int copyNumber =  number;
+        int copyNumber = number;
 
-        int sum =0;
+        int sum = 0;
         int r;
 
         //Calculate the sum of the digits
-        while(number > 0) {
-             r = number % 10;
+        while (number > 0) {
+            r = number % 10;
 
-             sum = sum + r;
+            sum = sum + r;
 
-             number = number /10;
+            number = number / 10;
         }
 
-        if(copyNumber % sum ==0) {
-            Log.v("===>>>" ,copyNumber +" is Harshad number");
+        if (copyNumber % sum == 0) {
+            Log.v("===>>>", copyNumber + " is Harshad number");
         } else {
-            Log.v("===>>>" ,copyNumber +" is not Harshad number");
+            Log.v("===>>>", copyNumber + " is not Harshad number");
         }
 
     }
