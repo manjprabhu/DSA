@@ -77,15 +77,15 @@ public class ArrayAlgo {
     public void largestNumber() {
         int[] a = {11, 5, 7, 5, 2, 4, 3, 3, -1};
 
-        int largest  = Integer.MIN_VALUE;
+        int largest = Integer.MIN_VALUE;
 
-        for(int k =0;k<a.length;k++) {
+        for (int k = 0; k < a.length; k++) {
 
-            if(a[k] > largest) {
+            if (a[k] > largest) {
                 largest = a[k];
             }
         }
-        Log.v("===>>>" ,"Largest number is :" + largest);
+        Log.v("===>>>", "Largest number is :" + largest);
     }
 
     public void smallestNumber() {
@@ -93,12 +93,50 @@ public class ArrayAlgo {
 
         int smallest = Integer.MAX_VALUE;
 
-        for(int k=0;k<a.length;k++) {
+        for (int k = 0; k < a.length; k++) {
 
-            if(a[k] < smallest) {
+            if (a[k] < smallest) {
                 smallest = a[k];
             }
         }
-        Log.v("===>>>" ,"Smallest number is :" + smallest);
+        Log.v("===>>>", "Smallest number is :" + smallest);
+    }
+
+    public void secondLargest() {
+        int[] a = {-1, -5, -7, -5, -2, -41, 3, -13, -1};
+
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        for (int i : a) {
+
+            if (i > largest) {
+                secondLargest = largest;
+                largest = i;
+            } else if (i < largest && i > secondLargest) {
+                secondLargest = i;
+            }
+        }
+        Log.v("===>>>", "Largest number is :" + largest);
+        Log.v("===>>>", "Second Largest number is :" + secondLargest);
+    }
+
+    public void secondSmallest() {
+        int[] a = {11, 5, 7, 5, 2, 4, 3, -13, -1};
+
+        int smallest = Integer.MAX_VALUE;
+        int secondSmallest = Integer.MAX_VALUE;
+
+        for (int k : a) {
+            if (k < smallest) {
+                secondSmallest = smallest;
+                smallest = k;
+            } else if (k > smallest && k < secondSmallest) {
+                secondSmallest = k;
+            }
+        }
+
+        Log.v("===>>>", "Smallest number is :" + smallest);
+        Log.v("===>>>", "Second smallest Largest number is :" + secondSmallest);
     }
 }
