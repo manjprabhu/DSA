@@ -17,8 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         PrimeNumber primeNumber = new PrimeNumber();
 
-        sumOfDigit.isHarshdNumber();
-
+        primeNumber.primeNumbersBetween2Numbers();
     }
 
     private void findsmallestNumber() {

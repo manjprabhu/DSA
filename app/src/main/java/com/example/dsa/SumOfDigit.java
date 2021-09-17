@@ -10,11 +10,9 @@ public class SumOfDigit {
     public void sumOfDigit() {
         int num = 123456;
 
-        int r = 0;
+        int r;
 
         int sum = 0;
-
-        sum = sum + r;
 
         while (num > 0) {
             // Get the last digit of the number by using modulus operator
@@ -31,7 +29,7 @@ public class SumOfDigit {
 
         int reverse = 0;
 
-        int reminder = 0;
+        int reminder;
 
         while (num > 0) {
 
@@ -49,7 +47,7 @@ public class SumOfDigit {
 
         int n = 163, number = 163;
 
-        int sum = 0, rem = 0;
+        int sum = 0, rem;
 
         while (sum > 9 || n > 0) {
 
@@ -77,14 +75,14 @@ public class SumOfDigit {
     }
 
     //A Harshad number is one which is divisible by sum of its digits e.g 21 =  2+ 1 = 3 -> 21/3 = 7
-    public void isHarshdNumber() {
+    public void isHarshadNumber() {
 
         int number  = 171;
 
         int copyNumber =  number;
 
         int sum =0;
-        int r = 0;
+        int r;
 
         //Calculate the sum of the digits
         while(number > 0) {
@@ -93,7 +91,6 @@ public class SumOfDigit {
              sum = sum + r;
 
              number = number /10;
-
         }
 
         if(copyNumber % sum ==0) {
