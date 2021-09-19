@@ -3,12 +3,13 @@ package com.example.dsa;
 import android.util.Log;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 
 public class ArrayAlgo {
 
-    private final String TAG =  ArrayAlgo.class.getSimpleName();
+    private final String TAG = ArrayAlgo.class.getSimpleName();
 
     public ArrayAlgo() {
     }
@@ -148,7 +149,7 @@ public class ArrayAlgo {
         Log.v("===>>>", "Second smallest Largest number is :" + secondSmallest);
     }
 
-    //Find all the duplicate element in array.
+    //Find all the duplicate element in array. This solution has Quadratic time complexity O(n^2)
     public void duplicateElementInArray() {
 
         int[] arr = {1, 2, 7, 3, 8, 4, 6, 9, 3, 9};
@@ -157,12 +158,25 @@ public class ArrayAlgo {
 
             for (int y = x + 1; y < arr.length; y++) {
 
-                if(arr[x] == arr[y]) {
-                    Log.v(TAG," Duplicate element:" +arr[y]);
+                if (arr[x] == arr[y] && x != y) {
+                    Log.v(TAG, " Duplicate element:" + arr[y]);
                 }
-
             }
         }
+    }
 
+    //Find all the duplicate element in array, using HashSet, time complexity of this solution is O(n).
+    public void duplicateElementInArrayUsingHashSet() {
+
+        int[] arr = {9, 2, 7, 3, 8, 4, 9, 9, 3, 9};
+
+        HashSet hashSet = new HashSet();
+
+        for (int x = 0; x < arr.length; x++) {
+
+            if(!hashSet.add(arr[x])) {
+                Log.v(TAG, " Duplicate element in array :" + arr[x]);
+            }
+        }
     }
 }

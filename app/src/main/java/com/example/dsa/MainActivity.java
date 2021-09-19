@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAlgo arrayAlgo = new ArrayAlgo();
 
-        arrayAlgo.duplicateElementInArray();
+        arrayAlgo.duplicateElementInArrayUsingHashSet();
     }
 //     Print the below sequence
 //     5 4 3 2 1
