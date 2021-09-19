@@ -226,4 +226,44 @@ public class ArrayAlgo {
             }
         }
     }
+
+    //    Find the single missing number from given array of natural number.
+    public void findMissingNumber() {
+        int[] a = {1, 2, 3, 4, 6, 7, 8, 9, 10, 11};
+
+        int sum = 0;
+
+        for (int x = 0; x < a.length; x++) {
+            sum = sum + a[x];
+        }
+
+        int sum1 = a[a.length - 1] * (a[a.length - 1] + 1) / 2;
+
+        Log.v(TAG, "Missing Number is:" + (sum1 - sum));
+
+    }
+
+    //    Find largest and smallest in an array
+    public void LargestSmallest() {
+        int[] a = getRandomArray(10);
+
+        for (int value : a) {
+            Log.v(TAG, "Input array:" + value);
+        }
+
+        int smallest = Integer.MAX_VALUE;
+        int largest = Integer.MIN_VALUE;
+
+        for (int x = 0; x < a.length; x++) {
+
+            if (a[x] > largest) {
+                largest = a[x];
+            } else if (a[x] < smallest) {
+                smallest = a[x];
+            }
+        }
+
+        Log.v(TAG, "Largest Element is :" + largest + " Smallest element is :" + smallest);
+
+    }
 }

@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAlgo arrayAlgo = new ArrayAlgo();
 
-        arrayAlgo.duplicateElementInArrayUsingHashSet();
+        arrayAlgo.LargestSmallest();
+
     }
 //     Print the below sequence
 //     5 4 3 2 1
