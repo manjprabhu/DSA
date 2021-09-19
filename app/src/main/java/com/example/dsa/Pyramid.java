@@ -127,4 +127,35 @@ public class Pyramid {
         }
     }
 
+//         Print the below sequence
+//         1
+//       2 2
+//     3 3 3
+//   4 4 4 4
+// 5 5 5 5 5
+
+
+//     Print the below sequence
+//    1
+//    2  3
+//    4  5  6
+//    7  8  9  10
+//    11 12 13 14 15
+
+    public void patternOne() {
+
+        int num = 1;
+        int noOfRows = 5;
+
+        for (int k = 0; k < noOfRows; k++) {
+
+            for (int l = 0; l < k + 1; l++) {
+
+                System.out.print(num + " ");
+                num = num + 1;
+            }
+            System.out.println();
+        }
+    }
+
 }
