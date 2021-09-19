@@ -266,4 +266,15 @@ public class ArrayAlgo {
         Log.v(TAG, "Largest Element is :" + largest + " Smallest element is :" + smallest);
 
     }
+
+    //    Factorial of a number
+    public void factorialOfNumber() {
+        int num = 6;
+        int fact = 1;
+
+        for (int i = 1; i <= num; i++) {
+            fact = fact * i;
+        }
+        Log.v(TAG, "Factorial of " + num + " is :" + fact);
+    }
 }
