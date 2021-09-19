@@ -14,6 +14,20 @@ public class ArrayAlgo {
     public ArrayAlgo() {
     }
 
+    /**
+     * Utility method to return random array of Integers in a range of 0 to 10
+     */
+    public static int[] getRandomArray(int length) {
+        int[] randomArray = new int[length];
+
+        for (int i = 0; i < length; i++) {
+
+            randomArray[i] = (int) (Math.random() * 25);
+        }
+        return randomArray;
+    }
+
+
     //    Count the occurrence of each number in an array
     public void countTheOccurrence() {
 
@@ -36,18 +50,22 @@ public class ArrayAlgo {
         Iterator iterator = countMap.entrySet().iterator();
 
         while (iterator.hasNext()) {
-            Log.v("===>>>", "" + iterator.next());
+            Log.v(TAG, "" + iterator.next());
         }
 
         for (Map.Entry entry : countMap.entrySet()) {
-            Log.v("===>>", entry.getKey() + " occurred " + entry.getValue() + " times");
+            Log.v(TAG, entry.getKey() + " occurred " + entry.getValue() + " times");
 
         }
     }
 
     //    Reverse the given array
     public void reverseArray() {
-        int[] a = {1, 3, 6, 8, 2, 4, 6, 8, 11};
+        int[] a = getRandomArray(10);
+
+        for (int value : a) {
+            Log.v(TAG, "Input array:" + value);
+        }
 
         for (int k = 0; k < a.length / 2; k++) {
 
@@ -59,21 +77,25 @@ public class ArrayAlgo {
         }
 
         for (int j : a) {
-            Log.v("===>>> ", " Element:" + j);
+            Log.v(TAG, " Element:" + j);
         }
     }
 
     //    Find all the pair of number in a given array whose sum is given number.
     public void pairWithGivenSum() {
-        int[] a = {1, 5, 7, 5, 2, 4, 3, 3, -1};
-        int sum = 6;
+        int[] a = getRandomArray(10);
+
+        for (int value : a) {
+            Log.v(TAG, "Input array:" + value);
+        }
+        int sum = 16;
 
         for (int i = 0; i < a.length; i++) {
 
             for (int j = i + 1; j < a.length; j++) {
 
                 if (a[i] + a[j] == sum) {
-                    Log.v("===>> ", a[i] + " and " + a[j] + " makes sum: " + sum);
+                    Log.v(TAG, a[i] + " and " + a[j] + " makes sum: " + sum);
                 }
             }
         }
@@ -81,42 +103,54 @@ public class ArrayAlgo {
 
     //    Find the largest element in an given array
     public void largestNumber() {
-        int[] a = {11, 5, 7, 5, 2, 4, 3, 3, -1};
+        int[] arr = getRandomArray(10);
+
+        for (int value : arr) {
+            Log.v(TAG, "Input array:" + value);
+        }
 
         int largest = Integer.MIN_VALUE;
 
-        for (int k = 0; k < a.length; k++) {
+        for (int k = 0; k < arr.length; k++) {
 
-            if (a[k] > largest) {
-                largest = a[k];
+            if (arr[k] > largest) {
+                largest = arr[k];
             }
         }
-        Log.v("===>>>", "Largest number is :" + largest);
+        Log.v(TAG, "Largest number is :" + largest);
     }
 
     //    Find  the smallest element in an given array
     public void smallestNumber() {
-        int[] a = {11, 5, 7, 5, 2, 4, 3, -13, -1};
+        int[] arr = getRandomArray(10);
+
+        for (int value : arr) {
+            Log.v(TAG, "Input array:" + value);
+        }
 
         int smallest = Integer.MAX_VALUE;
 
-        for (int k = 0; k < a.length; k++) {
+        for (int k = 0; k < arr.length; k++) {
 
-            if (a[k] < smallest) {
-                smallest = a[k];
+            if (arr[k] < smallest) {
+                smallest = arr[k];
             }
         }
-        Log.v("===>>>", "Smallest number is :" + smallest);
+        Log.v(TAG, "Smallest number is :" + smallest);
     }
 
     //    Find the Largest and second Second largest element in an array
     public void secondLargest() {
-        int[] a = {-1, -5, -7, -5, -2, -41, 3, -13, -1};
+        int[] arr = getRandomArray(10);
+
+        for (int value : arr) {
+            Log.v(TAG, "Input array:" + value);
+        }
 
         int largest = Integer.MIN_VALUE;
         int secondLargest = Integer.MIN_VALUE;
 
-        for (int i : a) {
+        for (int i : arr) {
 
             if (i > largest) {
                 secondLargest = largest;
@@ -125,18 +159,23 @@ public class ArrayAlgo {
                 secondLargest = i;
             }
         }
-        Log.v("===>>>", "Largest number is :" + largest);
-        Log.v("===>>>", "Second Largest number is :" + secondLargest);
+        Log.v(TAG, "Largest number is :" + largest);
+        Log.v(TAG, "Second Largest number is :" + secondLargest);
     }
 
     //    Find the Smallest and second smallest element in an array
     public void secondSmallest() {
-        int[] a = {11, 5, 7, 5, 2, 4, 3, -13, -1};
+
+        int[] arr = getRandomArray(10);
+
+        for (int value : arr) {
+            Log.v(TAG, "Input array:" + value);
+        }
 
         int smallest = Integer.MAX_VALUE;
         int secondSmallest = Integer.MAX_VALUE;
 
-        for (int k : a) {
+        for (int k : arr) {
             if (k < smallest) {
                 secondSmallest = smallest;
                 smallest = k;
@@ -145,14 +184,18 @@ public class ArrayAlgo {
             }
         }
 
-        Log.v("===>>>", "Smallest number is :" + smallest);
-        Log.v("===>>>", "Second smallest Largest number is :" + secondSmallest);
+        Log.v(TAG, "Smallest number is :" + smallest);
+        Log.v(TAG, "Second smallest number is :" + secondSmallest);
     }
 
     //Find all the duplicate element in array. This solution has Quadratic time complexity O(n^2)
     public void duplicateElementInArray() {
 
-        int[] arr = {1, 2, 7, 3, 8, 4, 6, 9, 3, 9};
+        int[] arr = getRandomArray(10);
+
+        for (int value : arr) {
+            Log.v(TAG, "Input array:" + value);
+        }
 
         for (int x = 0; x < arr.length; x++) {
 
@@ -168,13 +211,17 @@ public class ArrayAlgo {
     //Find all the duplicate element in array, using HashSet, time complexity of this solution is O(n).
     public void duplicateElementInArrayUsingHashSet() {
 
-        int[] arr = {9, 2, 7, 3, 8, 4, 9, 9, 3, 9};
+        int[] arr = getRandomArray(10);
+
+        for (int value : arr) {
+            Log.v(TAG, "Input array:" + value);
+        }
 
         HashSet hashSet = new HashSet();
 
         for (int x = 0; x < arr.length; x++) {
 
-            if(!hashSet.add(arr[x])) {
+            if (!hashSet.add(arr[x])) {
                 Log.v(TAG, " Duplicate element in array :" + arr[x]);
             }
         }
