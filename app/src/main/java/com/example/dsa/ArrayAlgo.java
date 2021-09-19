@@ -8,6 +8,8 @@ import java.util.Map;
 
 public class ArrayAlgo {
 
+    private final String TAG =  ArrayAlgo.class.getSimpleName();
+
     public ArrayAlgo() {
     }
 
@@ -144,5 +146,23 @@ public class ArrayAlgo {
 
         Log.v("===>>>", "Smallest number is :" + smallest);
         Log.v("===>>>", "Second smallest Largest number is :" + secondSmallest);
+    }
+
+    //Find all the duplicate element in array.
+    public void duplicateElementInArray() {
+
+        int[] arr = {1, 2, 7, 3, 8, 4, 6, 9, 3, 9};
+
+        for (int x = 0; x < arr.length; x++) {
+
+            for (int y = x + 1; y < arr.length; y++) {
+
+                if(arr[x] == arr[y]) {
+                    Log.v(TAG," Duplicate element:" +arr[y]);
+                }
+
+            }
+        }
+
     }
 }

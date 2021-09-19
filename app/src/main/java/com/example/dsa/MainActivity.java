@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAlgo arrayAlgo = new ArrayAlgo();
 
-        pyramid.patternOne();
+        arrayAlgo.duplicateElementInArray();
     }
 //     Print the below sequence
 //     5 4 3 2 1
