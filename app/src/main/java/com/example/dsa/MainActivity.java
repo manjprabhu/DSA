@@ -19,26 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAlgo arrayAlgo = new ArrayAlgo();
 
-        arrayAlgo.LargestSmallest();
-
-    }
-//     Print the below sequence
-//     5 4 3 2 1
-//     4 3 2 1
-//     3 2 1
-//     2 1
-//     1
-
-    private void pattern() {
-        int n = 5;
-
-        for (int k = 0; k < n; k++) {
-
-            for (int j = n - k; j >= 1; j--) {
-                System.out.print(j + " ");
-            }
-            System.out.println();
-        }
+        arrayAlgo.OddOccurenceNumber();
 
     }
 }
