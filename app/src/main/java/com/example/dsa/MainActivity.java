@@ -21,5 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAlgo arrayAlgo = new ArrayAlgo();
 
+        arrayAlgo.pairWithGivenSumSolutionTwo();
+
     }
 }

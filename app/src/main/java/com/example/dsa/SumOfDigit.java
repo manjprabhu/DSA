@@ -10,7 +10,7 @@ public class SumOfDigit {
     }
 
     //    Sum of all the digits of the given number.
-    public void sumOfDigitInNumber) {
+    public void sumOfDigitInNumber() {
         int num = 123456;
 
         int r;
