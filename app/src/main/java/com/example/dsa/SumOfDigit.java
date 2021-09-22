@@ -4,11 +4,13 @@ import android.util.Log;
 
 public class SumOfDigit {
 
+    private final String TAG = SumOfDigit.class.getSimpleName();
+
     public SumOfDigit() {
     }
 
     //    Sum of all the digits of the given number.
-    public void sumOfDigit() {
+    public void sumOfDigitInNumber) {
         int num = 123456;
 
         int r;
@@ -21,7 +23,7 @@ public class SumOfDigit {
             sum = sum + r;
             num = num / 10;
         }
-        Log.v("===>>", " Sum:" + sum);
+        Log.v(TAG, " Sum of all digits:" + sum);
     }
 
     //    Reverse the given number.
@@ -41,7 +43,7 @@ public class SumOfDigit {
 
             num = num / 10;
         }
-        Log.v("===>>", " reverse:" + reverse);
+        Log.v(TAG, "Number:" + num + "  " +  " Reverse Number:" + reverse);
 
     }
 
@@ -70,9 +72,9 @@ public class SumOfDigit {
         }
 
         if (sum == 1) {
-            Log.v("===>>>", number + " is MagicNumber:");
+            Log.v(TAG, number + " is MagicNumber:");
         } else {
-            Log.v("===>>>", number + " is not MagicNumber:");
+            Log.v(TAG, number + " is not MagicNumber:");
         }
 
     }
@@ -97,9 +99,9 @@ public class SumOfDigit {
         }
 
         if (copyNumber % sum == 0) {
-            Log.v("===>>>", copyNumber + " is Harshad number");
+            Log.v(TAG, copyNumber + " is Harshad number");
         } else {
-            Log.v("===>>>", copyNumber + " is not Harshad number");
+            Log.v(TAG, copyNumber + " is not Harshad number");
         }
 
     }

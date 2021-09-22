@@ -13,13 +13,13 @@ public class MainActivity extends AppCompatActivity {
 
         Pyramid pyramid = new Pyramid();
 
+        pyramid.invertedHalfNumberPyramid();
+
         SumOfDigit sumOfDigit = new SumOfDigit();
 
         PrimeNumber primeNumber = new PrimeNumber();
 
         ArrayAlgo arrayAlgo = new ArrayAlgo();
-
-        arrayAlgo.OddOccurenceNumber();
 
     }
 }

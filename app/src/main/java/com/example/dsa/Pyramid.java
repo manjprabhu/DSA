@@ -93,10 +93,9 @@ public class Pyramid {
 
     public void invertedHalfNumberPyramid() {
         int n = 5;
-        int limit = n;
         for (int k = 0; k < n; k++) {
 
-            for (int l = 1; l <= limit - k; l++) {
+            for (int l = 1; l <= n - k; l++) {
                 System.out.print(l + " ");
             }
             System.out.println();

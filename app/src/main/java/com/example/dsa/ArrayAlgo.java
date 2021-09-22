@@ -20,7 +20,7 @@ public class ArrayAlgo {
     public static int[] getRandomArray(int length) {
         int[] randomArray = new int[length];
 
-        for (int i = 0; i < length; i++) {
+        for (int i = 1; i < length; i++) {
 
             randomArray[i] = (int) (Math.random() * 25);
         }
@@ -81,7 +81,7 @@ public class ArrayAlgo {
         }
     }
 
-    //    Find all the pair of number in a given array whose sum is given number.
+    //    Find all the pair of number in a given array whose sum is given number. Time complexity is O(n^2).
     public void pairWithGivenSum() {
         int[] a = getRandomArray(10);
 
@@ -100,6 +100,24 @@ public class ArrayAlgo {
             }
         }
     }
+
+    //    Improved solution.
+    public void pairWithGivenSumSolutionTwo() {
+        int[] a = getRandomArray(10);
+
+        for (int value : a) {
+            Log.v(TAG, "Input array:" + value);
+        }
+        int sum = 16;
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+
+        for (int k = 0; k < a.length; k++) {
+            if (!hashMap.containsKey(a[k])) {
+                hashMap.put(a[k], hashMap.get(a[k]) + 1);
+            }
+        }
+    }
+
 
     //    Find the largest element in an given array
     public void largestNumber() {
@@ -130,10 +148,10 @@ public class ArrayAlgo {
 
         int smallest = Integer.MAX_VALUE;
 
-        for (int k = 0; k < arr.length; k++) {
+        for (int i : arr) {
 
-            if (arr[k] < smallest) {
-                smallest = arr[k];
+            if (i < smallest) {
+                smallest = i;
             }
         }
         Log.v(TAG, "Smallest number is :" + smallest);
@@ -219,10 +237,10 @@ public class ArrayAlgo {
 
         HashSet hashSet = new HashSet();
 
-        for (int x = 0; x < arr.length; x++) {
+        for (int i : arr) {
 
-            if (!hashSet.add(arr[x])) {
-                Log.v(TAG, " Duplicate element in array :" + arr[x]);
+            if (!hashSet.add(i)) {
+                Log.v(TAG, " Duplicate element in array :" + i);
             }
         }
     }
@@ -233,8 +251,8 @@ public class ArrayAlgo {
 
         int sum = 0;
 
-        for (int x = 0; x < a.length; x++) {
-            sum = sum + a[x];
+        for (int i : a) {
+            sum = sum + i;
         }
 
         int sum1 = a[a.length - 1] * (a[a.length - 1] + 1) / 2;
@@ -276,5 +294,30 @@ public class ArrayAlgo {
             fact = fact * i;
         }
         Log.v(TAG, "Factorial of " + num + " is :" + fact);
+    }
+
+    //    Find the Number Occurring Odd Number of Times , Brute force way O(n^2)
+    public void OddOccurrenceNumber() {
+
+        int[] a = {1, 2, 3, 2, 3, 1, 3};
+
+        for (int value : a) {
+            Log.v(TAG, "===>>> value:" + value);
+        }
+
+        for (int value : a) {
+
+            int i;
+            for (i = 0; i < a.length; i++) {
+                int count = 0;
+                for (int k : a) {
+                    if (a[i] == k)
+                        count++;
+                }
+                if (count % 2 != 0)
+                    Log.v(TAG, "===>>> Number:" + value);
+            }
+        }
+
     }
 }
