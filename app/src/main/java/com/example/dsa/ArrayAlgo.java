@@ -105,10 +105,10 @@ public class ArrayAlgo {
     public void pairWithGivenSumSolutionTwo() {
 //        int[] a = getRandomArray(10);
 
-        int[] a = {2,4,6,8,0,7,1,6};
+        int[] a = {2, 4, 6, 5, 3};
 
         for (int value : a) {
-            Log.v(TAG, "Input array:" + value);
+//            Log.v(TAG, "Input array:" + value);
         }
         int sum = 8;
         HashMap<Integer, Integer> hashMap = new HashMap<>();
@@ -116,22 +116,12 @@ public class ArrayAlgo {
         for (int i = 0; i < a.length; i++) {
 
             if (hashMap.containsKey(sum - a[i])) {
-
-                Log.v(TAG,"===>>> Hash:"+hashMap.get(sum-a[i]));
-                Log.v(TAG,"===>>> value:"+a[hashMap.get(sum - a[i])]);
-                Log.v(TAG,"===>>> Sum: "+ sum + " Pair( " + a[i] + " ," +a[hashMap.get(sum-a[i])] + ")");
-
+                Log.v(TAG, "===>>> Sum: " + sum + " Pair( " + a[i] + " ," + a[hashMap.get(sum - a[i])] + ")");
             }
             hashMap.put(a[i], i);
-
-
         }
-        for(Map.Entry entry : hashMap.entrySet()) {
-
-            Log.v(TAG,"===>>> Value:"+entry.getValue());
-
-            Log.v(TAG,"===>>> Key:"+entry.getKey());
-
+        for (Map.Entry entry : hashMap.entrySet()) {
+            Log.v(TAG, "===>>> (" + entry.getKey() + "," + entry.getValue() + ")");
         }
 
     }
