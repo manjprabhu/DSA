@@ -43,7 +43,7 @@ public class SumOfDigit {
 
             num = num / 10;
         }
-        Log.v(TAG, "Number:" + num + "  " +  " Reverse Number:" + reverse);
+        Log.v(TAG, "Number:" + num + "  " + " Reverse Number:" + reverse);
 
     }
 
@@ -103,6 +103,26 @@ public class SumOfDigit {
         } else {
             Log.v(TAG, copyNumber + " is not Harshad number");
         }
+    }
 
+//    A special two-digit number is a number such that when the sum of the digits of the number is added to the product of its digits,
+//    the result is equal to the original two-digit number. e.g 59,29
+
+    public void isSpecialTwoDigitNumber() {
+        int num = 59;
+
+        int first = num / 10;
+
+        int second = num % 10;
+
+        int sum = first + second;
+
+        int product = first * second;
+
+        if ((sum + product) == num) {
+            Log.v(TAG, "===>>> " + num + " is Special 2 digits number");
+        } else {
+            Log.v(TAG, "===>>> " + num + " is not a special 2 digits number");
+        }
     }
 }
