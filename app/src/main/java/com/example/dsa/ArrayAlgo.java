@@ -347,9 +347,24 @@ public class ArrayAlgo {
             n1 = n2;
 
             n2 = sum;
-
-
         }
+    }
 
+    public void NthFibonacciNUmber() {
+
+        int n1 =0,n2 =1, sum =0;
+
+        int x = callRecursion(5);
+
+        Log.v(TAG,"===>>> Recursion:"+callRecursion(6));
+    }
+
+    private int callRecursion(int limit) {
+
+       if(limit < 2) {
+           Log.v(TAG,"Element :"+ limit);
+           return limit;
+       }
+        else return callRecursion(limit-1) + callRecursion(limit-2);
     }
 }
