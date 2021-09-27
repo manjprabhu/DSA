@@ -328,4 +328,28 @@ public class ArrayAlgo {
         }
 
     }
+
+    public void fibbonacciNumber() {
+        int n1 = 0, n2 = 1, sum = 0;
+
+        int limit = 7;
+
+        Log.v(TAG, "===>>> " + n1);
+
+        Log.v(TAG, "===>>> " + n2);
+
+        for (int i = 2; i <= limit; i++) {
+
+            sum = n1 + n2;
+
+            Log.v(TAG, "===>>> " + sum);
+
+            n1 = n2;
+
+            n2 = sum;
+
+
+        }
+
+    }
 }
