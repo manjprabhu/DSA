@@ -125,4 +125,5 @@ public class SumOfDigit {
             Log.v(TAG, "===>>> " + num + " is not a special 2 digits number");
         }
     }
+
 }

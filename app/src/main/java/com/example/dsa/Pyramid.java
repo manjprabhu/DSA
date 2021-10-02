@@ -126,14 +126,6 @@ public class Pyramid {
         }
     }
 
-//         Print the below sequence
-//         1
-//       2 2
-//     3 3 3
-//   4 4 4 4
-// 5 5 5 5 5
-
-
 //     Print the below sequence
 //    1
 //    2  3

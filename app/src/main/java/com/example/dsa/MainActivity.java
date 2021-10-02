@@ -17,11 +17,12 @@ public class MainActivity extends AppCompatActivity {
 
         SumOfDigit sumOfDigit = new SumOfDigit();
 
+
         PrimeNumber primeNumber = new PrimeNumber();
 
         ArrayAlgo arrayAlgo = new ArrayAlgo();
 
-        arrayAlgo.pairWithGivenSumSolutionTwo();
+        arrayAlgo.OddOccurrenceNumber();
 
     }
 }

@@ -31,7 +31,9 @@ public class ArrayAlgo {
     //    Count the occurrence of each number in an array
     public void countTheOccurrence() {
 
-        int[] arr = {1, 3, 4, 6, 6, 8, 9, 9, 8, 8};
+//        int[] arr = {1, 3, 4, 6, 6, 8, 9, 9, 8, 8};
+
+        int[] arr = {1, 2, 2, 1, 3, 1, 3};
 
         HashMap<Integer, Integer> countMap = new HashMap<>();
         int count;
@@ -304,28 +306,35 @@ public class ArrayAlgo {
         Log.v(TAG, "Factorial of " + num + " is :" + fact);
     }
 
-    //    Find the Number Occurring Odd Number of Times , Brute force way O(n^2)
+    //    Find the Number Occurring Odd Number of Times. Using Hashmap.
     public void OddOccurrenceNumber() {
 
-        int[] a = {1, 2, 3, 2, 3, 1, 3};
+        int[] a = {1, 2, 2, 1, 3, 1, 3, 3};
 
         for (int value : a) {
             Log.v(TAG, "===>>> value:" + value);
         }
 
-        for (int value : a) {
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        int count = 0;
 
-            int i;
-            for (i = 0; i < a.length; i++) {
-                int count = 0;
-                for (int k : a) {
-                    if (a[i] == k)
-                        count++;
-                }
-                if (count % 2 != 0)
-                    Log.v(TAG, "===>>> Number:" + value);
+        for (int x = 0; x < a.length; x++) {
+
+            if (hashMap.containsKey(a[x])) {
+                count = hashMap.get(a[x]);
+                count++;
+                hashMap.put(a[x], count);
+            } else {
+                hashMap.put(a[x], 1);
             }
         }
+
+        for (Map.Entry entry : hashMap.entrySet()) {
+            if ((Integer) entry.getValue() % 2 != 0) {
+                Log.v(TAG, "Number  " + entry.getKey() + " Occurred odd number of times");
+            }
+        }
+
 
     }
 
@@ -352,19 +361,36 @@ public class ArrayAlgo {
 
     public void NthFibonacciNUmber() {
 
-        int n1 =0,n2 =1, sum =0;
+        int n1 = 0, n2 = 1, sum = 0;
 
         int x = callRecursion(5);
 
-        Log.v(TAG,"===>>> Recursion:"+callRecursion(6));
+        Log.v(TAG, "===>>> Recursion:" + callRecursion(6));
     }
 
     private int callRecursion(int limit) {
 
-       if(limit < 2) {
-           Log.v(TAG,"Element :"+ limit);
-           return limit;
-       }
-        else return callRecursion(limit-1) + callRecursion(limit-2);
+        if (limit < 2) {
+            Log.v(TAG, "Element :" + limit);
+            return limit;
+        } else return callRecursion(limit - 1) + callRecursion(limit - 2);
+    }
+
+    //Count all the occurence of a given number in an array in such a way that
+    //next number of given number is greater the given number
+    // Given number is 2 and next of given number in array shall be greater than given number (i.e >2)
+    public void findtheOccurence() {
+        int[] a = {1, 2, 4, 2, 6, 4, 2, 3};
+
+        int count = 0, givenNumber = 2;
+        for (int i = 0; i < a.length; i++) {
+
+            //Check if current number is givenNumber  (i.e 2) and next element in array shall be greater than
+            // than givenNumber (> 2).
+            if (a[i] == givenNumber && a[i + 1] > givenNumber) {
+                count++;
+            }
+        }
+        Log.d(TAG, "===>>> Count of 2:" + count);
     }
 }
