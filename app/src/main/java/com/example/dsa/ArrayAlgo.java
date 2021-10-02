@@ -396,7 +396,7 @@ public class ArrayAlgo {
 
 
     public void firstRepeatingElement() {
-        int[] a = {9, 9, 4, 3, 6, 4, 2, 3};
+        int[] a = {9, 12, 4, 3, 6, 4, 2, 3};
 
         for (int x : a) {
             Log.d(TAG, "===>> Array: " + x);
@@ -404,8 +404,8 @@ public class ArrayAlgo {
 
         boolean found = false;
         for (int x = 0; x < a.length; x++) {
-            for (int y = x + 1; y < a.length; y++) {
-                if (a[x] == a[y]) {
+            for (int y = 0; y < a.length; y++) {
+                if (a[x] == a[y] && x!=y) {
                     Log.v(TAG, "===>>> First Duplicate element is:" + a[x]);
                     found = true;
                     break;
