@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAlgo arrayAlgo = new ArrayAlgo();
 
-        arrayAlgo.OddOccurrenceNumber();
+        arrayAlgo.firstRepeatingElement();
 
     }
 }
