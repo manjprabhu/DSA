@@ -290,9 +290,7 @@ public class ArrayAlgo {
                 smallest = a[x];
             }
         }
-
         Log.v(TAG, "Largest Element is :" + largest + " Smallest element is :" + smallest);
-
     }
 
     //    Factorial of a number
@@ -334,8 +332,6 @@ public class ArrayAlgo {
                 Log.v(TAG, "Number  " + entry.getKey() + " Occurred odd number of times");
             }
         }
-
-
     }
 
     public void fibbonacciNumber() {
@@ -405,7 +401,7 @@ public class ArrayAlgo {
         boolean found = false;
         for (int x = 0; x < a.length; x++) {
             for (int y = 0; y < a.length; y++) {
-                if (a[x] == a[y] && x!=y) {
+                if (a[x] == a[y] && x != y) {
                     Log.v(TAG, "===>>> First Duplicate element is:" + a[x]);
                     found = true;
                     break;
