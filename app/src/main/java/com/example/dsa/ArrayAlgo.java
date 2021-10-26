@@ -31,9 +31,7 @@ public class ArrayAlgo {
     //    Count the occurrence of each number in an array
     public void countTheOccurrence() {
 
-//        int[] arr = {1, 3, 4, 6, 6, 8, 9, 9, 8, 8};
-
-        int[] arr = {1, 2, 2, 1, 3, 1, 3};
+        int[] arr = {1, 3, 4, 6, 6, 8, 9, 9, 8, 8};
 
         HashMap<Integer, Integer> countMap = new HashMap<>();
         int count;
@@ -103,7 +101,7 @@ public class ArrayAlgo {
         }
     }
 
-    //    Improved solution. time complexity O(n) and spance complexity is O(n)
+    //    Improved solution. time complexity O(n) and space complexity is O(n)
     public void pairWithGivenSumSolutionTwo() {
 //        int[] a = getRandomArray(10);
 
@@ -392,7 +390,7 @@ public class ArrayAlgo {
 
 
     public void firstRepeatingElement() {
-        int[] a = {9, 12, 4, 3, 6, 4, 2, 3};
+        int[] a = {9, 12, 4, 3, 6, 4, 2, 9};
 
         for (int x : a) {
             Log.d(TAG, "===>> Array: " + x);
@@ -411,4 +409,99 @@ public class ArrayAlgo {
                 break;
         }
     }
+
+    public void rotateBruteForce(int k) {
+        int[] nums = {9, 12, 4, 3, 6, 4, 2};
+        for (int i = 0; i < k; i++) {
+            for (int j = nums.length - 1; j > 0; j--) {
+                // move each number by 1 place
+                int temp = nums[j];
+                nums[j] = nums[j - 1];
+                nums[j - 1] = temp;
+
+                Log.v(TAG, " --------------------------");
+            }
+        }
+        for (int x = 0; x < nums.length; x++) {
+            Log.v(TAG, " ===>>> Rotated array:" + nums[x]);
+        }
+    }
+
+    public void rotateArrayKtimes() {
+        int[] nums = {9, 12, 4, 3, 6, 4, 2};
+        int k = 2;
+        //Output
+//        int[] nums = {4,3,6,4,2,12,9};
+        int[] temp = new int[k];
+
+        for (int i = 0; i < k; i++) {
+            temp[i] = nums[i];
+            //temp = {9,12}
+        }
+
+        for (int i = k; i < nums.length - 1; i++) {
+            nums[i - k] = nums[i];
+        }
+
+    }
+
+    public void SubArrayWithGivenSum() {
+        int arr[] = {1, 4, 20, 3, 10, 5}, sum = 5;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            int sum_so_far = 0;
+
+            for (int j = i; j < arr.length; j++) {
+
+                sum_so_far = sum_so_far + arr[j];
+
+                if (sum_so_far == sum) {
+                    Log.v(TAG, "===> Element found b/w:" + i + " and " + j);
+                }
+            }
+        }
+    }
+
+    public void allSubArray() {
+        int arr[] = new int[]{1, 2, 3, 4};
+
+        //Starting point of subarray
+        for (int i = 0; i < arr.length; i++) {
+
+            //Ending point of subarray
+            for (int j = i; j < arr.length; j++) {
+
+                for (int k = i; k <= j; k++) {
+                    System.out.print("" + arr[k] + " ");
+                }
+                System.out.println();
+            }
+
+        }
+    }
+
+    public void sumOfAllSubarray() {
+        int arr[] = {1, 2, 3,4};
+
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+
+            int temp_sum = 0;
+            for (int j = i; j < arr.length; j++) {
+
+                for (int k = i; k <= j; k++) {
+
+                    temp_sum = temp_sum + arr[k];
+                }
+            }
+
+            sum = sum + temp_sum;
+
+        }
+
+        Log.v(TAG,"SUm of subarray:"+sum);
+    }
+
+
 }
