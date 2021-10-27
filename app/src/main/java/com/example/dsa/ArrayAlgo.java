@@ -27,6 +27,42 @@ public class ArrayAlgo {
         return randomArray;
     }
 
+    static void lenOfLongSubArray() {
+        int[] arr = {10, 5, 2, 7, 1, 9};
+        int n = arr.length;
+        int k = 15;
+        // HashMap to store (sum, index) tuples
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int sum = 0, maxLen = 0;
+
+        // traverse the given array
+        for (int i = 0; i < n; i++) {
+
+            // accumulate sum
+            sum += arr[i];
+
+            // when subarray starts from index '0'
+            if (sum == k)
+                maxLen = i + 1;
+
+            // make an entry for 'sum' if it is
+            // not present in 'map'
+            if (!map.containsKey(sum)) {
+                map.put(sum, i);
+            }
+
+            // check if 'sum-k' is present in 'map'
+            // or not
+            if (map.containsKey(sum - k)) {
+
+                // update maxLength
+                if (maxLen < (i - map.get(sum - k)))
+                    maxLen = i - map.get(sum - k);
+            }
+        }
+
+        Log.v("ArrayAlgo", "Maxlen:" + maxLen);
+    }
 
     //    Count the occurrence of each number in an array
     public void countTheOccurrence() {
@@ -125,7 +161,6 @@ public class ArrayAlgo {
         }
 
     }
-
 
     //    Find the largest element in an given array
     public void largestNumber() {
@@ -388,7 +423,6 @@ public class ArrayAlgo {
         Log.d(TAG, "===>>> Count of 2:" + count);
     }
 
-
     public void firstRepeatingElement() {
         int[] a = {9, 12, 4, 3, 6, 4, 2, 9};
 
@@ -446,7 +480,8 @@ public class ArrayAlgo {
     }
 
     public void SubArrayWithGivenSum() {
-        int arr[] = {1, 4, 20, 3, 10, 5}, sum = 5;
+        int[] arr = {1, 4, 20, 3, 10, 5};
+        int sum = 5;
 
         for (int i = 0; i < arr.length; i++) {
 
@@ -464,7 +499,7 @@ public class ArrayAlgo {
     }
 
     public void allSubArray() {
-        int arr[] = new int[]{1, 2, 3, 4};
+        int[] arr = new int[]{1, 2, 3, 4};
 
         //Starting point of subarray
         for (int i = 0; i < arr.length; i++) {
@@ -482,7 +517,7 @@ public class ArrayAlgo {
     }
 
     public void sumOfAllSubarray() {
-        int arr[] = {1, 2, 3,4};
+        int[] arr = {1, 2, 3, 4};
 
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -500,7 +535,56 @@ public class ArrayAlgo {
 
         }
 
-        Log.v(TAG,"SUm of subarray:"+sum);
+        Log.v(TAG, "SUm of subarray:" + sum);
+    }
+
+    public void subArrayWithGivenSum() {
+        int[] arr = {1, 4, 20, 3, 10, 5};
+        int sum = 33;
+
+        int cur_sum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            cur_sum = arr[i];
+
+            for (int j = i + 1; j <= arr.length; j++) {
+                if (cur_sum == sum) {
+                    Log.v(TAG, " Sum is found b/w:  " + i + " and " + (j - 1));
+                }
+                cur_sum = cur_sum + arr[j];
+            }
+
+        }
+    }
+
+    //Find the smallest subary whose sum is greater than the given value
+    public void smallestSubArray() {
+
+        int[] arr = {1, 4, 45, 6, 10, 19};
+        int x = 51;
+        int cur_sum = 0;
+
+        // to track the current minimum length subarry
+        int cur_min = arr.length;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            cur_sum = arr[i];
+
+            for (int j = i + 1; j < arr.length; j++) {
+
+                cur_sum = cur_sum + arr[j];
+
+                if (cur_sum > x && ((j - i + 1) < cur_min)) {
+                    cur_min = (j - i + 1);
+                }
+            }
+        }
+
+        Log.v(TAG, "Minimum length of subarray:" + cur_min);
+
+
     }
 
 
