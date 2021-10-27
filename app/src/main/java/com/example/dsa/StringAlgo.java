@@ -73,11 +73,23 @@ public class StringAlgo {
     public void reverseString() {
         String str = "abcdefgh";
         String nStr = "";
-
+// One way
         for (int i = str.length() - 1; i >= 0; i--) {
             char c = str.charAt(i);
             nStr = nStr + c;
         }
+//Other way
+        char[] chars = str.toCharArray();
+        int start = 0, end = chars.length-1;
+
+        while(start<=end) {
+            char temp  = chars[start];
+            chars[start] = chars[end];
+            chars[end] = temp;
+            start++;
+            end--;
+        }
+        nStr =new String(chars);
 
         Log.v("StringAlgo", "String:" + str + " Reverse String:" + nStr);
     }
@@ -113,15 +125,34 @@ public class StringAlgo {
     public void initialsOfName() {
         String name = " Prakash Kumar Sharma";
 
-        Log.v("StringAlgo", " "+ name.charAt(0));
-        for(int i=0;i<name.length();i++) {
+        Log.v("StringAlgo", " " + name.charAt(0));
+        for (int i = 0; i < name.length(); i++) {
 
-            if(name.charAt(i) == ' ') {
-                Log.v("StringAlgo", " "+ name.charAt(i+1));
+            if (name.charAt(i) == ' ') {
+                Log.v("StringAlgo", " " + name.charAt(i + 1));
             }
-
         }
     }
+
+    public void swapFirstnLastCharofWord() {
+        String name = "Prakash Kumar Sharma";
+
+        char[] chars = name.toCharArray();
+
+        for (int i = 0; i < chars.length; i++) {
+
+            int k = i;
+            while (i < chars.length && chars[i] != ' ')
+                i++;
+                char temp = chars[i-1];
+                chars[i-1] = chars[k];
+                chars[k] = temp;
+        }
+
+        Log.v("StringAlgo", "new String:" + new String(chars));
+    }
+
+
 
 }
 
