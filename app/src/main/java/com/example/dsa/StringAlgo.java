@@ -82,5 +82,17 @@ public class StringAlgo {
         Log.v("StringAlgo", "String:" + str + " Reverse String:" + nStr);
     }
 
+    public void reverseStringBuiltInMethod() {
+        String str  = "abcdefgh";
+
+        StringBuilder stringBuilder = new StringBuilder(str);
+
+        stringBuilder.reverse();
+
+        str = stringBuilder.toString();
+
+        Log.v("StringAlgo", "String:" + str);
+    }
+
 }
 
