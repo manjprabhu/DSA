@@ -43,7 +43,7 @@ public class StringAlgo {
         int index = 0;
 
         for (int x = 0; x < 26; x++) {
-            Log.v("StringAlgo", "Mark:"+mark[x]);
+            Log.v("StringAlgo", "Mark:" + mark[x]);
         }
         ArrayList<Character> MissingChar = new ArrayList<>(26);
 
@@ -59,15 +59,27 @@ public class StringAlgo {
             mark[index] = true;
         }
         for (int x = 0; x < 26; x++) {
-            if(mark[x] == false) {
-                MissingChar.add((char)(x + 'a'));
+            if (mark[x] == false) {
+                MissingChar.add((char) (x + 'a'));
             }
         }
 
         for (int x = 0; x < MissingChar.size(); x++) {
-            Log.v("StringAlgo", "Missing Char:"+MissingChar.get(x));
+            Log.v("StringAlgo", "Missing Char:" + MissingChar.get(x));
         }
 
+    }
+
+    public void reverseString() {
+        String str = "abcdefgh";
+        String nStr = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            char c = str.charAt(i);
+            nStr = nStr + c;
+        }
+
+        Log.v("StringAlgo", "String:" + str + " Reverse String:" + nStr);
     }
 
 }
