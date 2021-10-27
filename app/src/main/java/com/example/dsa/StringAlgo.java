@@ -110,5 +110,18 @@ public class StringAlgo {
         }
     }
 
+    public void initialsOfName() {
+        String name = " Prakash Kumar Sharma";
+
+        Log.v("StringAlgo", " "+ name.charAt(0));
+        for(int i=0;i<name.length();i++) {
+
+            if(name.charAt(i) == ' ') {
+                Log.v("StringAlgo", " "+ name.charAt(i+1));
+            }
+
+        }
+    }
+
 }
 
