@@ -83,7 +83,7 @@ public class StringAlgo {
     }
 
     public void reverseStringBuiltInMethod() {
-        String str  = "abcdefgh";
+        String str = "abcdefgh";
 
         StringBuilder stringBuilder = new StringBuilder(str);
 
@@ -92,6 +92,22 @@ public class StringAlgo {
         str = stringBuilder.toString();
 
         Log.v("StringAlgo", "String:" + str);
+    }
+
+    public void isDigitOrString() {
+        String str = "123h";
+        boolean isDigit = true;
+
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isDigit(str.charAt(i)) == false) {
+                isDigit = false;
+            }
+        }
+        if (isDigit) {
+            Log.v("StringAlgo", "isDigits");
+        } else {
+            Log.v("StringAlgo", "is not digit");
+        }
     }
 
 }
