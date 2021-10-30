@@ -15,7 +15,7 @@ public class ArrayAlgorithms {
         int temp[] = new int[input.length];
 
         int j = 0;
-        for (int a = 0; a < input.length - 1; a++) {
+        for ( int a = 0; a < input.length - 1; a++ ) {
 
             //if current and next element are same, don't add the current element.
             if (input[a] != input[a + 1]) {
@@ -26,28 +26,28 @@ public class ArrayAlgorithms {
         temp[j++] = input[input.length - 1];
 
         // Copy the temporary array element into the original array.
-        for (int b = 0; b < j; b++) {
+        for ( int b = 0; b < j; b++ ) {
             input[b] = temp[b];
         }
 
-        for (int i = 0; i < j; i++) {
+        for ( int i = 0; i < j; i++ ) {
             Log.v(TAG, "Final array: " + input[i]);
         }
     }
 
     public void removeDuplicateFromSortedArray2() {
         int input[] = {1, 2, 2, 4, 4, 6, 6, 7, 8, 9, 88};
-        int j=0;
+        int j = 0;
 
-        for(int i=0;i<input.length-1;i++) {
+        for ( int i = 0; i < input.length - 1; i++ ) {
 
-            if(input[i] != input[i+1]) {
+            if (input[i] != input[i + 1]) {
                 input[j++] = input[i];
             }
         }
-        input[j++] = input[input.length-1];
+        input[j++] = input[input.length - 1];
 
-        for(int x=0;x<j;x++) {
+        for ( int x = 0; x < j; x++ ) {
             Log.v(TAG, "Final array: " + input[x]);
         }
     }
@@ -55,12 +55,12 @@ public class ArrayAlgorithms {
     public void putAllZerosToendofArray() {
         int arr[] = {1, 2, 0, 4, 3, 0, 5, 0};
 
-        int count =0;// to keep track of non zero numbers.
+        int count = 0;// to keep track of non zero numbers.
 
-        for(int x =0;x<arr.length;x++) {
+        for ( int x = 0; x < arr.length; x++ ) {
 
             //If current element is not zero , move to the count index.
-            if(arr[x]!=0) {
+            if (arr[x] != 0) {
 //                arr[count] = arr[x];
 //                count++;
                 int temp = arr[count];
@@ -75,15 +75,15 @@ public class ArrayAlgorithms {
 //            arr[count++] = 0;
 //        }
 
-        for(int x=0;x<arr.length;x++) {
+        for ( int x = 0; x < arr.length; x++ ) {
             Log.v(TAG, "Final array: " + arr[x]);
         }
     }
 
     public void findMissingAndRepeatingElementinArray() {
-        int[] arr = { 4, 3, 6, 2, 1, 1 };
+        int[] arr = {4, 3, 6, 2, 1, 1};
 
-        HashMap<Integer,Boolean> hashMap = new HashMap<>();
+        HashMap<Integer, Boolean> hashMap = new HashMap<>();
 
         for ( int j : arr ) {
 
@@ -94,11 +94,34 @@ public class ArrayAlgorithms {
             }
         }
 
-        for(int i=1;i<=arr.length;i++) {
-            if(hashMap.get(i) == null) {
-                Log.v(TAG, "Missing element:"+i);
+        for ( int i = 1; i <= arr.length; i++ ) {
+            if (hashMap.get(i) == null) {
+                Log.v(TAG, "Missing element:" + i);
             }
         }
+    }
 
+//    Maximum of all subarrays of size k (Sliding window)
+
+    public void MaximumofAllSubarray() {
+
+        int arr[] = {1, 2, 3, 1, 4, 5, 2, 3, 6};
+
+        int k = 3;
+
+
+        for ( int i = 0; i < arr.length - k; i++ ) {
+
+            int max = arr[i];
+
+            for ( int j = 1; j < k; j++ ) {
+
+                if(max < arr[j+i]) {
+                    max = arr[j+i];
+                }
+            }
+            Log.v(TAG, "Max:" +max);
+
+        }
     }
 }
