@@ -158,9 +158,8 @@ public class ArrayAlgorithms {
         int n = array.length;
         int left = 0, right = n - 1;
 
-
         while (left < right) {
-            
+
             while (array[left] == 0) {
                 left++;
             }
@@ -178,6 +177,40 @@ public class ArrayAlgorithms {
 
         for ( int i = 0; i < array.length; i++ ) {
             Log.v(TAG, "Final array:" + array[i]);
+        }
+    }
+
+    void maximumofPerffectSqaure() {
+
+        int a[] = {16, 20, 25, 2, 3, 10};
+        int n = a.length;
+
+        int max = -1;
+        for ( int i = 0; i < n; i++ ) {
+            if(isPerfectSquare(a[i])) {
+                max= Math.max(a[i],max);
+            }
+        }
+        Log.v(TAG, "Max Square root number:" + max);
+    }
+
+    private boolean isPerfectSquare(double n) {
+        double d = Math.sqrt(n);
+
+        if (d * d == n)
+            return true;
+        return false;
+    }
+
+    void perfectSquareinARange() {
+        int a[] = {16, 20, 25, 2, 3, 10};
+
+        int n = a.length;
+
+        for(int i=0;i<n;i++) {
+            if(isPerfectSquare(a[i])) {
+                Log.v(TAG,"Perfect Sqaure:"+ a[i]);
+            }
         }
 
     }
