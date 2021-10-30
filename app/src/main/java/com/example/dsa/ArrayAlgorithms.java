@@ -2,6 +2,8 @@ package com.example.dsa;
 
 import android.util.Log;
 
+import java.util.HashMap;
+
 public class ArrayAlgorithms {
 
     private final String TAG = ArrayAlgorithms.class.getSimpleName();
@@ -76,5 +78,27 @@ public class ArrayAlgorithms {
         for(int x=0;x<arr.length;x++) {
             Log.v(TAG, "Final array: " + arr[x]);
         }
+    }
+
+    public void findMissingAndRepeatingElementinArray() {
+        int[] arr = { 4, 3, 6, 2, 1, 1 };
+
+        HashMap<Integer,Boolean> hashMap = new HashMap<>();
+
+        for ( int j : arr ) {
+
+            if (hashMap.get(j) == null) {
+                hashMap.put(j, true);
+            } else {
+                Log.v(TAG, "Repeating element:" + j);
+            }
+        }
+
+        for(int i=1;i<=arr.length;i++) {
+            if(hashMap.get(i) == null) {
+                Log.v(TAG, "Missing element:"+i);
+            }
+        }
+
     }
 }
