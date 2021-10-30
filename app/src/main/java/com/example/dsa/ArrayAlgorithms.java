@@ -32,4 +32,49 @@ public class ArrayAlgorithms {
             Log.v(TAG, "Final array: " + input[i]);
         }
     }
+
+    public void removeDuplicateFromSortedArray2() {
+        int input[] = {1, 2, 2, 4, 4, 6, 6, 7, 8, 9, 88};
+        int j=0;
+
+        for(int i=0;i<input.length-1;i++) {
+
+            if(input[i] != input[i+1]) {
+                input[j++] = input[i];
+            }
+        }
+        input[j++] = input[input.length-1];
+
+        for(int x=0;x<j;x++) {
+            Log.v(TAG, "Final array: " + input[x]);
+        }
+    }
+
+    public void putAllZerosToendofArray() {
+        int arr[] = {1, 2, 0, 4, 3, 0, 5, 0};
+
+        int count =0;// to keep track of non zero numbers.
+
+        for(int x =0;x<arr.length;x++) {
+
+            //If current element is not zero , move to the count index.
+            if(arr[x]!=0) {
+//                arr[count] = arr[x];
+//                count++;
+                int temp = arr[count];
+                arr[count] = arr[x];
+                arr[x] = temp;
+                count++;
+            }
+        }
+
+        //Now count is pointing to the index of first zero, mark all following elements to zero
+//        while(count < arr.length) {
+//            arr[count++] = 0;
+//        }
+
+        for(int x=0;x<arr.length;x++) {
+            Log.v(TAG, "Final array: " + arr[x]);
+        }
+    }
 }
