@@ -461,6 +461,7 @@ public class ArrayAlgo {
         }
     }
 
+    //Using temp array.
     public void rotateArrayKtimes() {
         int[] nums = {9, 12, 4, 3, 6, 4, 2};
         int k = 2;
@@ -477,6 +478,28 @@ public class ArrayAlgo {
             nums[i - k] = nums[i];
         }
 
+    }
+
+    //Incomplete
+    public void rotateleft() {
+        int k =2;
+        int[] nums = {9, 12, 4, 3, 6, 4, 2};
+        int[] temp = new int[k];
+
+        for(int i=0;i<k;i++) {
+            temp[i] = nums[i];
+        }
+
+        for(int x =k;x<nums.length;x++) {
+            nums[x-k] = nums[x];
+        }
+        for( int y =0;y<k;y++) {
+            nums[y+nums.length-k] = temp[y];
+        }
+
+        for(int m=0;m<nums.length;m++) {
+            Log.v(TAG, "===> array:"+nums[m]);
+        }
     }
 
     public void SubArrayWithGivenSum() {
@@ -523,6 +546,7 @@ public class ArrayAlgo {
         for (int i = 0; i < arr.length; i++) {
 
             int temp_sum = 0;
+
             for (int j = i; j < arr.length; j++) {
 
                 for (int k = i; k <= j; k++) {
@@ -535,7 +559,7 @@ public class ArrayAlgo {
 
         }
 
-        Log.v(TAG, "SUm of subarray:" + sum);
+        Log.v(TAG, "Sum of subarray:" + sum);
     }
 
     public void subArrayWithGivenSum() {
@@ -549,23 +573,27 @@ public class ArrayAlgo {
             cur_sum = arr[i];
 
             for (int j = i + 1; j <= arr.length; j++) {
+
                 if (cur_sum == sum) {
                     Log.v(TAG, " Sum is found b/w:  " + i + " and " + (j - 1));
+                    return;
                 }
+                if(cur_sum> sum || j== arr.length)
+                    break;
                 cur_sum = cur_sum + arr[j];
             }
 
         }
     }
 
-    //Find the smallest subary whose sum is greater than the given value
+    //Find the smallest subArray whose sum is greater than the given value
     public void smallestSubArray() {
 
         int[] arr = {1, 4, 45, 6, 10, 19};
         int x = 51;
         int cur_sum = 0;
 
-        // to track the current minimum length subarry
+        // to track the current minimum length subarray
         int cur_min = arr.length;
 
         for (int i = 0; i < arr.length; i++) {
@@ -581,10 +609,7 @@ public class ArrayAlgo {
                 }
             }
         }
-
         Log.v(TAG, "Minimum length of subarray:" + cur_min);
-
-
     }
 
 
