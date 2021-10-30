@@ -197,12 +197,15 @@ public class ArrayAlgorithms {
     private boolean isPerfectSquare(double n) {
         double d = Math.sqrt(n);
 
-        if (d * d == n)
+        double value = Math.floor(d);
+
+        if(d-value ==0) {
             return true;
+        }
         return false;
     }
 
-    void perfectSquareinARange() {
+    void perfectSquareinAArray() {
         int a[] = {16, 20, 25, 2, 3, 10};
 
         int n = a.length;
@@ -211,6 +214,69 @@ public class ArrayAlgorithms {
             if(isPerfectSquare(a[i])) {
                 Log.v(TAG,"Perfect Sqaure:"+ a[i]);
             }
+        }
+
+    }
+    void perfectSquareinARange() {
+        int a=9, b=25;
+
+        int count =0;
+        for(int i=a;i<=b;i++) {
+            if(isPerfectSquare(i)) {
+               count++;
+            }
+        }
+        Log.v(TAG,"Count:"+ count);
+    }
+
+    void floorSqrt() {
+        int x = 5;
+
+        int i =1,result =1;
+
+        while(result <=x) {
+            i++;
+            result = i*i;
+        }
+
+        Log.v(TAG,"Floor or squareRoot : "+ (i-1));
+    }
+    //Given a number , find the number in opposite face of cubic dice.
+    void diceProblem() {
+
+        //in dice, 6 is opposite 1 , 5 opposite to 2 and 4 is opposite to 3
+        // hence sum of opposite face is always 7;
+
+        int x = 1;
+
+        if(x> 6 || x<1) {
+            return;
+        }
+        int sum =7;
+
+        Log.v(TAG,"Opposite side is:"+ (sum-x));
+
+    }
+
+    void geekonacci() {
+//        Given four integers A, B, C and N, where A, B, C represents the first three numbers of the geekonacci series,
+//        The Nth term of the geekonacci series is the sum of its previous three terms in the series i.e., sum of (N – 1)th, (N – 2)th, and (N – 3)th geekonacci numbers.
+//        Input: A = 1, B = 3, C = 2, N = 4
+//        output = 6;
+
+        int A = 1, B = 3, C = 2, N = 6;
+
+        int a[] = new int[N];
+
+        a[0] = A;
+        a[1] = B;
+        a[2] = C;
+
+        for(int i=3;i<N;i++) {
+            a[i] = a[i-1] +a[i-2] +a[i-3];
+        }
+        for(int x =0;x<a.length;x++) {
+            Log.v(TAG,"Geek o nacci series:"+a[x]);
         }
 
     }
