@@ -116,12 +116,69 @@ public class ArrayAlgorithms {
 
             for ( int j = 1; j < k; j++ ) {
 
-                if(max < arr[j+i]) {
-                    max = arr[j+i];
+                if (max < arr[j + i]) {
+                    max = arr[j + i];
                 }
             }
-            Log.v(TAG, "Max:" +max);
+            Log.v(TAG, "Max:" + max);
 
         }
+    }
+
+    void SegregateZeroAndOnesInArray() {
+
+        int array[] = {0, 1, 0, 1, 0, 0, 1, 1, 1, 0};
+
+        int countZero = 0;// Count number of zeros;
+
+        for ( int i = 0; i < array.length; i++ ) {
+            if (array[i] == 0) {
+                countZero++;
+            }
+        }
+
+        //Fill the array with countZero number of 0's
+        for ( int i = 0; i < countZero - 1; i++ ) {
+            array[i] = 0;
+        }
+        //Fill rest of the arry with 1's
+        for ( int i = countZero; i < array.length; i++ ) {
+            array[i] = 1;
+        }
+
+        for ( int i = 0; i < array.length; i++ ) {
+            Log.v(TAG, "Finla array:" + array[i]);
+        }
+    }
+
+    void SegregateZeroAndOnesInArray2() {
+
+        int array[] = {0, 1, 0, 1, 0, 0, 1, 1, 1, 0};
+
+        int n = array.length;
+        int left = 0, right = n - 1;
+
+
+        while (left < right) {
+            
+            while (array[left] == 0) {
+                left++;
+            }
+
+            while (array[right] == 1) {
+                right--;
+            }
+
+            if (left < right) {
+                int temp = array[left];
+                array[left] = array[right];
+                array[right] = temp;
+            }
+        }
+
+        for ( int i = 0; i < array.length; i++ ) {
+            Log.v(TAG, "Final array:" + array[i]);
+        }
+
     }
 }
