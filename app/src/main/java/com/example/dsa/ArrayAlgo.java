@@ -328,8 +328,8 @@ public class ArrayAlgo {
 
     //    Factorial of a number
     public void factorialOfNumber() {
-        int num = 6;
-        int fact = 1;
+        int num = 13;
+        long fact = 1;
 
         for (int i = 1; i <= num; i++) {
             fact = fact * i;

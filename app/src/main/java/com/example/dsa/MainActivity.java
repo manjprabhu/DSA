@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
         Pyramid pyramid = new Pyramid();
 
-        pyramid.invertedHalfNumberPyramid();
+//        pyramid.invertedHalfNumberPyramid();
 
         SumOfDigit sumOfDigit = new SumOfDigit();
 
@@ -22,7 +22,13 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAlgo arrayAlgo = new ArrayAlgo();
 
-        arrayAlgo.firstRepeatingElement();
+
+
+        StringAlgo stringAlgo = new StringAlgo();
+
+        ArrayAlgorithms arrayAlgorithms = new ArrayAlgorithms();
+        arrayAlgorithms.findallSubarrayWithSumK();
+
 
     }
 }
