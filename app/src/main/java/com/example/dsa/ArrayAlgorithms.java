@@ -324,4 +324,25 @@ public class ArrayAlgorithms {
         Log.v(TAG, "Count:" + count);
 
     }
+
+    void nextGreaterElement() {
+        int a[] = {4, 5, 2, 25};
+        int n = a.length;
+
+        int next = -1;
+
+        for ( int i = 0; i <n-1; i++ ) {
+
+
+            for ( int j = i + 1; j <= n; j++ ) {
+
+                if (a[j] > a[i]) {
+                    next = a[j];
+                    break;
+                }
+            }
+            Log.v(TAG, "Next greater Element :" + next);
+        }
+
+    }
 }
