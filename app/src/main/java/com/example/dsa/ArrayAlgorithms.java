@@ -187,8 +187,8 @@ public class ArrayAlgorithms {
 
         int max = -1;
         for ( int i = 0; i < n; i++ ) {
-            if(isPerfectSquare(a[i])) {
-                max= Math.max(a[i],max);
+            if (isPerfectSquare(a[i])) {
+                max = Math.max(a[i], max);
             }
         }
         Log.v(TAG, "Max Square root number:" + max);
@@ -199,7 +199,7 @@ public class ArrayAlgorithms {
 
         double value = Math.floor(d);
 
-        if(d-value ==0) {
+        if (d - value == 0) {
             return true;
         }
         return false;
@@ -210,37 +210,39 @@ public class ArrayAlgorithms {
 
         int n = a.length;
 
-        for(int i=0;i<n;i++) {
-            if(isPerfectSquare(a[i])) {
-                Log.v(TAG,"Perfect Sqaure:"+ a[i]);
+        for ( int i = 0; i < n; i++ ) {
+            if (isPerfectSquare(a[i])) {
+                Log.v(TAG, "Perfect Sqaure:" + a[i]);
             }
         }
 
     }
-    void perfectSquareinARange() {
-        int a=9, b=25;
 
-        int count =0;
-        for(int i=a;i<=b;i++) {
-            if(isPerfectSquare(i)) {
-               count++;
+    void perfectSquareinARange() {
+        int a = 9, b = 25;
+
+        int count = 0;
+        for ( int i = a; i <= b; i++ ) {
+            if (isPerfectSquare(i)) {
+                count++;
             }
         }
-        Log.v(TAG,"Count:"+ count);
+        Log.v(TAG, "Count:" + count);
     }
 
     void floorSqrt() {
         int x = 5;
 
-        int i =1,result =1;
+        int i = 1, result = 1;
 
-        while(result <=x) {
+        while (result <= x) {
             i++;
-            result = i*i;
+            result = i * i;
         }
 
-        Log.v(TAG,"Floor or squareRoot : "+ (i-1));
+        Log.v(TAG, "Floor or squareRoot : " + (i - 1));
     }
+
     //Given a number , find the number in opposite face of cubic dice.
     void diceProblem() {
 
@@ -249,12 +251,12 @@ public class ArrayAlgorithms {
 
         int x = 1;
 
-        if(x> 6 || x<1) {
+        if (x > 6 || x < 1) {
             return;
         }
-        int sum =7;
+        int sum = 7;
 
-        Log.v(TAG,"Opposite side is:"+ (sum-x));
+        Log.v(TAG, "Opposite side is:" + (sum - x));
 
     }
 
@@ -272,12 +274,54 @@ public class ArrayAlgorithms {
         a[1] = B;
         a[2] = C;
 
-        for(int i=3;i<N;i++) {
-            a[i] = a[i-1] +a[i-2] +a[i-3];
+        for ( int i = 3; i < N; i++ ) {
+            a[i] = a[i - 1] + a[i - 2] + a[i - 3];
         }
-        for(int x =0;x<a.length;x++) {
-            Log.v(TAG,"Geek o nacci series:"+a[x]);
+        for ( int x = 0; x < a.length; x++ ) {
+            Log.v(TAG, "Geek o nacci series:" + a[x]);
         }
+
+    }
+
+    void KSubarraySum() {
+
+        int a[] = {10, 11, 10, 11, 12};
+        int n = a.length;
+        int k = 2; // SUbarray size
+
+        for ( int i = 0; i < n - k + 1; i++ ) {
+
+            int sum_so_far = a[i];
+
+            for ( int j = 1; j < k; j++ ) {
+                sum_so_far = sum_so_far + a[i + j];
+            }
+            Log.v(TAG, "sum_so_far:" + sum_so_far);
+        }
+    }
+
+    void findallSubarrayWithSumK() {
+
+        int arr[] = {9, 4, 20, 3, 10, 5};
+        int n = arr.length;
+        int k = 33;
+        int count = 0;
+
+        for ( int start = 0; start < n; start++ ) {
+
+            for ( int end = start + 1; end <= n; end++ ) {
+                int sum = 0;
+
+                for ( int m = start; m < end; m++ )
+                    sum = sum + arr[m];
+
+                if (sum == k) {
+                    count++;
+                }
+            }
+        }
+
+        Log.v(TAG, "Count:" + count);
 
     }
 }

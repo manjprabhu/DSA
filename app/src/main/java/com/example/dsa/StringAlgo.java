@@ -3,8 +3,11 @@ package com.example.dsa;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class StringAlgo {
+
+    private final String TAG = StringAlgo.class.getSimpleName();
 
     public void pangramCheck() {
         String str = "The quick brown fox jumps over the lazy dog";
@@ -152,6 +155,23 @@ public class StringAlgo {
         Log.v("StringAlgo", "new String:" + new String(chars));
     }
 
+
+    void reverseWordinString() {
+        String str = "i,like,this,program,very,much";
+        //output = " much very program this like i"
+
+        String[] str1 = str.split(",");
+
+        Log.v(TAG,"Str1 length:"+ str1.length);
+
+        String output = "";
+
+        for(int i= str1.length-1;i>=0;i--) {
+            output = output + (str1[i] + ".");
+        }
+
+        Log.v(TAG," Reverse String:"+output);
+    }
 
 
 }
