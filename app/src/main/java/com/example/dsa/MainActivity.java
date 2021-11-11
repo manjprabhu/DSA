@@ -13,21 +13,19 @@ public class MainActivity extends AppCompatActivity {
 
         Pyramid pyramid = new Pyramid();
 
-//        pyramid.invertedHalfNumberPyramid();
+        practice practice = new practice();
 
         SumOfDigit sumOfDigit = new SumOfDigit();
-
 
         PrimeNumber primeNumber = new PrimeNumber();
 
         ArrayAlgo arrayAlgo = new ArrayAlgo();
-
-
+//        arrayAlgo.PairWithLargestProduct();
 
         StringAlgo stringAlgo = new StringAlgo();
 
         ArrayAlgorithms arrayAlgorithms = new ArrayAlgorithms();
-        arrayAlgorithms.findallSubarrayWithSumK();
+
 
 
     }
