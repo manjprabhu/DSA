@@ -20,14 +20,14 @@ public class ArrayAlgo {
     public static int[] getRandomArray(int length) {
         int[] randomArray = new int[length];
 
-        for (int i = 1; i < length; i++) {
+        for ( int i = 1; i < length; i++ ) {
 
             randomArray[i] = (int) (Math.random() * 25);
         }
         return randomArray;
     }
 
-    static void lenOfLongSubArray() {
+    static void lengthOfLongSubArray() {
         int[] arr = {10, 5, 2, 7, 1, 9};
         int n = arr.length;
         int k = 15;
@@ -36,7 +36,7 @@ public class ArrayAlgo {
         int sum = 0, maxLen = 0;
 
         // traverse the given array
-        for (int i = 0; i < n; i++) {
+        for ( int i = 0; i < n; i++ ) {
 
             // accumulate sum
             sum += arr[i];
@@ -72,7 +72,7 @@ public class ArrayAlgo {
         HashMap<Integer, Integer> countMap = new HashMap<>();
         int count;
 
-        for (int i : arr) {
+        for ( int i : arr ) {
 
             if (countMap.containsKey(i)) {
                 count = countMap.get(i);
@@ -89,7 +89,7 @@ public class ArrayAlgo {
             Log.v(TAG, "" + iterator.next());
         }
 
-        for (Map.Entry entry : countMap.entrySet()) {
+        for ( Map.Entry entry : countMap.entrySet() ) {
             Log.v(TAG, entry.getKey() + " occurred " + entry.getValue() + " times");
 
         }
@@ -99,11 +99,11 @@ public class ArrayAlgo {
     public void reverseArray() {
         int[] a = getRandomArray(10);
 
-        for (int value : a) {
+        for ( int value : a ) {
             Log.v(TAG, "Input array:" + value);
         }
 
-        for (int k = 0; k < a.length / 2; k++) {
+        for ( int k = 0; k < a.length / 2; k++ ) {
 
             int temp = a[k];
 
@@ -112,7 +112,7 @@ public class ArrayAlgo {
             a[a.length - 1 - k] = temp;
         }
 
-        for (int j : a) {
+        for ( int j : a ) {
             Log.v(TAG, " Element:" + j);
         }
     }
@@ -121,14 +121,14 @@ public class ArrayAlgo {
     public void pairWithGivenSum() {
         int[] a = getRandomArray(10);
 
-        for (int value : a) {
+        for ( int value : a ) {
             Log.v(TAG, "Input array:" + value);
         }
         int sum = 16;
 
-        for (int i = 0; i < a.length; i++) {
+        for ( int i = 0; i < a.length; i++ ) {
 
-            for (int j = i + 1; j < a.length; j++) {
+            for ( int j = i + 1; j < a.length; j++ ) {
 
                 if (a[i] + a[j] == sum) {
                     Log.v(TAG, a[i] + " and " + a[j] + " makes sum: " + sum);
@@ -143,20 +143,20 @@ public class ArrayAlgo {
 
         int[] a = {2, 4, 6, 5, 3};
 
-        for (int value : a) {
+        for ( int value : a ) {
 //            Log.v(TAG, "Input array:" + value);
         }
         int sum = 8;
         HashMap<Integer, Integer> hashMap = new HashMap<>();
 
-        for (int i = 0; i < a.length; i++) {
+        for ( int i = 0; i < a.length; i++ ) {
 
             if (hashMap.containsKey(sum - a[i])) {
                 Log.v(TAG, "===>>> Sum: " + sum + " Pair( " + a[i] + " ," + a[hashMap.get(sum - a[i])] + ")");
             }
             hashMap.put(a[i], i);
         }
-        for (Map.Entry entry : hashMap.entrySet()) {
+        for ( Map.Entry entry : hashMap.entrySet() ) {
             Log.v(TAG, "===>>> (" + entry.getKey() + "," + entry.getValue() + ")");
         }
 
@@ -166,13 +166,13 @@ public class ArrayAlgo {
     public void largestNumber() {
         int[] arr = getRandomArray(10);
 
-        for (int value : arr) {
+        for ( int value : arr ) {
             Log.v(TAG, "Input array:" + value);
         }
 
         int largest = Integer.MIN_VALUE;
 
-        for (int k = 0; k < arr.length; k++) {
+        for ( int k = 0; k < arr.length; k++ ) {
 
             if (arr[k] > largest) {
                 largest = arr[k];
@@ -185,13 +185,13 @@ public class ArrayAlgo {
     public void smallestNumber() {
         int[] arr = getRandomArray(10);
 
-        for (int value : arr) {
+        for ( int value : arr ) {
             Log.v(TAG, "Input array:" + value);
         }
 
         int smallest = Integer.MAX_VALUE;
 
-        for (int i : arr) {
+        for ( int i : arr ) {
 
             if (i < smallest) {
                 smallest = i;
@@ -204,14 +204,14 @@ public class ArrayAlgo {
     public void secondLargest() {
         int[] arr = getRandomArray(10);
 
-        for (int value : arr) {
+        for ( int value : arr ) {
             Log.v(TAG, "Input array:" + value);
         }
 
         int largest = Integer.MIN_VALUE;
         int secondLargest = Integer.MIN_VALUE;
 
-        for (int i : arr) {
+        for ( int i : arr ) {
 
             if (i > largest) {
                 secondLargest = largest;
@@ -229,14 +229,14 @@ public class ArrayAlgo {
 
         int[] arr = getRandomArray(10);
 
-        for (int value : arr) {
+        for ( int value : arr ) {
             Log.v(TAG, "Input array:" + value);
         }
 
         int smallest = Integer.MAX_VALUE;
         int secondSmallest = Integer.MAX_VALUE;
 
-        for (int k : arr) {
+        for ( int k : arr ) {
             if (k < smallest) {
                 secondSmallest = smallest;
                 smallest = k;
@@ -254,13 +254,13 @@ public class ArrayAlgo {
 
         int[] arr = getRandomArray(10);
 
-        for (int value : arr) {
+        for ( int value : arr ) {
             Log.v(TAG, "Input array:" + value);
         }
 
-        for (int x = 0; x < arr.length; x++) {
+        for ( int x = 0; x < arr.length; x++ ) {
 
-            for (int y = x + 1; y < arr.length; y++) {
+            for ( int y = x + 1; y < arr.length; y++ ) {
 
                 if (arr[x] == arr[y] && x != y) {
                     Log.v(TAG, " Duplicate element:" + arr[y]);
@@ -274,13 +274,13 @@ public class ArrayAlgo {
 
         int[] arr = getRandomArray(10);
 
-        for (int value : arr) {
+        for ( int value : arr ) {
             Log.v(TAG, "Input array:" + value);
         }
 
         HashSet hashSet = new HashSet();
 
-        for (int i : arr) {
+        for ( int i : arr ) {
 
             if (!hashSet.add(i)) {
                 Log.v(TAG, " Duplicate element in array :" + i);
@@ -294,7 +294,7 @@ public class ArrayAlgo {
 
         int sum = 0;
 
-        for (int i : a) {
+        for ( int i : a ) {
             sum = sum + i;
         }
 
@@ -308,14 +308,14 @@ public class ArrayAlgo {
     public void LargestSmallest() {
         int[] a = getRandomArray(10);
 
-        for (int value : a) {
+        for ( int value : a ) {
             Log.v(TAG, "Input array:" + value);
         }
 
         int smallest = Integer.MAX_VALUE;
         int largest = Integer.MIN_VALUE;
 
-        for (int x = 0; x < a.length; x++) {
+        for ( int x = 0; x < a.length; x++ ) {
 
             if (a[x] > largest) {
                 largest = a[x];
@@ -331,7 +331,7 @@ public class ArrayAlgo {
         int num = 13;
         long fact = 1;
 
-        for (int i = 1; i <= num; i++) {
+        for ( int i = 1; i <= num; i++ ) {
             fact = fact * i;
         }
         Log.v(TAG, "Factorial of " + num + " is :" + fact);
@@ -342,14 +342,14 @@ public class ArrayAlgo {
 
         int[] a = {1, 2, 2, 1, 3, 1, 3, 3};
 
-        for (int value : a) {
+        for ( int value : a ) {
             Log.v(TAG, "===>>> value:" + value);
         }
 
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         int count = 0;
 
-        for (int x = 0; x < a.length; x++) {
+        for ( int x = 0; x < a.length; x++ ) {
 
             if (hashMap.containsKey(a[x])) {
                 count = hashMap.get(a[x]);
@@ -360,7 +360,7 @@ public class ArrayAlgo {
             }
         }
 
-        for (Map.Entry entry : hashMap.entrySet()) {
+        for ( Map.Entry entry : hashMap.entrySet() ) {
             if ((Integer) entry.getValue() % 2 != 0) {
                 Log.v(TAG, "Number  " + entry.getKey() + " Occurred odd number of times");
             }
@@ -376,7 +376,7 @@ public class ArrayAlgo {
 
         Log.v(TAG, "===>>> " + n2);
 
-        for (int i = 2; i <= limit; i++) {
+        for ( int i = 2; i <= limit; i++ ) {
 
             sum = n1 + n2;
 
@@ -412,7 +412,7 @@ public class ArrayAlgo {
         int[] a = {1, 2, 4, 2, 6, 4, 2, 3};
 
         int count = 0, givenNumber = 2;
-        for (int i = 0; i < a.length; i++) {
+        for ( int i = 0; i < a.length; i++ ) {
 
             //Check if current number is givenNumber  (i.e 2) and next element in array shall be greater than
             // than givenNumber (> 2).
@@ -426,13 +426,13 @@ public class ArrayAlgo {
     public void firstRepeatingElement() {
         int[] a = {9, 12, 4, 3, 6, 4, 2, 9};
 
-        for (int x : a) {
+        for ( int x : a ) {
             Log.d(TAG, "===>> Array: " + x);
         }
 
         boolean found = false;
-        for (int x = 0; x < a.length; x++) {
-            for (int y = 0; y < a.length; y++) {
+        for ( int x = 0; x < a.length; x++ ) {
+            for ( int y = 0; y < a.length; y++ ) {
                 if (a[x] == a[y] && x != y) {
                     Log.v(TAG, "===>>> First Duplicate element is:" + a[x]);
                     found = true;
@@ -446,8 +446,8 @@ public class ArrayAlgo {
 
     public void rotateBruteForce(int k) {
         int[] nums = {9, 12, 4, 3, 6, 4, 2};
-        for (int i = 0; i < k; i++) {
-            for (int j = nums.length - 1; j > 0; j--) {
+        for ( int i = 0; i < k; i++ ) {
+            for ( int j = nums.length - 1; j > 0; j-- ) {
                 // move each number by 1 place
                 int temp = nums[j];
                 nums[j] = nums[j - 1];
@@ -456,7 +456,7 @@ public class ArrayAlgo {
                 Log.v(TAG, " --------------------------");
             }
         }
-        for (int x = 0; x < nums.length; x++) {
+        for ( int x = 0; x < nums.length; x++ ) {
             Log.v(TAG, " ===>>> Rotated array:" + nums[x]);
         }
     }
@@ -469,12 +469,12 @@ public class ArrayAlgo {
 //        int[] nums = {4,3,6,4,2,12,9};
         int[] temp = new int[k];
 
-        for (int i = 0; i < k; i++) {
+        for ( int i = 0; i < k; i++ ) {
             temp[i] = nums[i];
             //temp = {9,12}
         }
 
-        for (int i = k; i < nums.length - 1; i++) {
+        for ( int i = k; i < nums.length - 1; i++ ) {
             nums[i - k] = nums[i];
         }
 
@@ -482,23 +482,23 @@ public class ArrayAlgo {
 
     //Incomplete
     public void rotateleft() {
-        int k =2;
+        int k = 2;
         int[] nums = {9, 12, 4, 3, 6, 4, 2};
         int[] temp = new int[k];
 
-        for(int i=0;i<k;i++) {
+        for ( int i = 0; i < k; i++ ) {
             temp[i] = nums[i];
         }
 
-        for(int x =k;x<nums.length;x++) {
-            nums[x-k] = nums[x];
+        for ( int x = k; x < nums.length; x++ ) {
+            nums[x - k] = nums[x];
         }
-        for( int y =0;y<k;y++) {
-            nums[y+nums.length-k] = temp[y];
+        for ( int y = 0; y < k; y++ ) {
+            nums[y + nums.length - k] = temp[y];
         }
 
-        for(int m=0;m<nums.length;m++) {
-            Log.v(TAG, "===> array:"+nums[m]);
+        for ( int m = 0; m < nums.length; m++ ) {
+            Log.v(TAG, "===> array:" + nums[m]);
         }
     }
 
@@ -506,11 +506,11 @@ public class ArrayAlgo {
         int[] arr = {1, 4, 20, 3, 10, 5};
         int sum = 5;
 
-        for (int i = 0; i < arr.length; i++) {
+        for ( int i = 0; i < arr.length; i++ ) {
 
             int sum_so_far = 0;
 
-            for (int j = i; j < arr.length; j++) {
+            for ( int j = i; j < arr.length; j++ ) {
 
                 sum_so_far = sum_so_far + arr[j];
 
@@ -525,12 +525,12 @@ public class ArrayAlgo {
         int[] arr = new int[]{1, 2, 3, 4};
 
         //Starting point of subarray
-        for (int i = 0; i < arr.length; i++) {
+        for ( int i = 0; i < arr.length; i++ ) {
 
             //Ending point of subarray
-            for (int j = i; j < arr.length; j++) {
+            for ( int j = i; j < arr.length; j++ ) {
 
-                for (int k = i; k <= j; k++) {
+                for ( int k = i; k <= j; k++ ) {
                     System.out.print("" + arr[k] + " ");
                 }
                 System.out.println();
@@ -543,13 +543,13 @@ public class ArrayAlgo {
         int[] arr = {1, 2, 3, 4};
 
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
+        for ( int i = 0; i < arr.length; i++ ) {
 
             int temp_sum = 0;
 
-            for (int j = i; j < arr.length; j++) {
+            for ( int j = i; j < arr.length; j++ ) {
 
-                for (int k = i; k <= j; k++) {
+                for ( int k = i; k <= j; k++ ) {
 
                     temp_sum = temp_sum + arr[k];
                 }
@@ -568,17 +568,17 @@ public class ArrayAlgo {
 
         int cur_sum = 0;
 
-        for (int i = 0; i < arr.length; i++) {
+        for ( int i = 0; i < arr.length; i++ ) {
 
             cur_sum = arr[i];
 
-            for (int j = i + 1; j <= arr.length; j++) {
+            for ( int j = i + 1; j <= arr.length; j++ ) {
 
                 if (cur_sum == sum) {
                     Log.v(TAG, " Sum is found b/w:  " + i + " and " + (j - 1));
                     return;
                 }
-                if(cur_sum> sum || j== arr.length)
+                if (cur_sum > sum || j == arr.length)
                     break;
                 cur_sum = cur_sum + arr[j];
             }
@@ -596,11 +596,11 @@ public class ArrayAlgo {
         // to track the current minimum length subarray
         int cur_min = arr.length;
 
-        for (int i = 0; i < arr.length; i++) {
+        for ( int i = 0; i < arr.length; i++ ) {
 
             cur_sum = arr[i];
 
-            for (int j = i + 1; j < arr.length; j++) {
+            for ( int j = i + 1; j < arr.length; j++ ) {
 
                 cur_sum = cur_sum + arr[j];
 
@@ -610,6 +610,71 @@ public class ArrayAlgo {
             }
         }
         Log.v(TAG, "Minimum length of subarray:" + cur_min);
+    }
+
+    // Java implementation to find first
+// element occurring k times
+    void firstElement() {
+        int arr[] = {1, 7, 4, 3, 4, 8, 7};
+        int n = arr.length;
+
+        int k = 2;
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for ( int i = 0; i < n; i++ ) {
+            int count = 0;
+            if (map.containsKey(arr[i])) {
+                count = map.get(arr[i]);
+                count = count + 1;
+                map.put(arr[i], count);
+            } else {
+                map.put(arr[i], 1);
+            }
+        }
+
+
+        for ( int i = 0; i < n; i++ ) {
+            if (map.get(arr[i]) == k) {
+                Log.v(TAG, "Value:" + arr[i]);
+                return;
+            }
+        }
+    }
+
+    void PairWithLargestProduct() {
+        int a[] = {10, 20, 12, 40, 50};
+
+        int n = a.length;
+
+        //get all the pair
+
+        int largest_product = Integer.MIN_VALUE;
+        int second_largest = Integer.MIN_VALUE;
+
+        int largest = 0, secondLargest = 0;
+
+
+        for ( int i = 0; i < n - 1; i++ ) {
+
+
+            for ( int j = i + 1; j <= n - 1; j++ ) {
+
+                int prod = a[i] * a[j];
+                if (prod > largest_product && prod > second_largest) {
+                    second_largest = largest_product;
+                    largest_product = prod;
+
+                } else if (prod < largest_product && prod > second_largest) {
+                    second_largest = prod;
+                    largest = a[i];
+                    secondLargest = a[j];
+                }
+
+            }
+        }
+        Log.v(TAG, "===>>> Largest Product:" + largest);
+        Log.v(TAG, "===>>> Second largest  Product:" + secondLargest);
     }
 
 

@@ -108,17 +108,22 @@ public class ArrayAlgorithms {
         int arr[] = {1, 2, 3, 1, 4, 5, 2, 3, 6};
 
         int k = 3;
-
+        int sum_so_far = 0;
 
         for ( int i = 0; i < arr.length - k; i++ ) {
 
-            int max = arr[i];
+            int max = 0;
 
-            for ( int j = 1; j < k; j++ ) {
+            for ( int j = 0; j < k; j++ ) {
 
                 if (max < arr[j + i]) {
                     max = arr[j + i];
                 }
+            }
+
+            if (sum_so_far < max) {
+                sum_so_far = max;
+
             }
             Log.v(TAG, "Max:" + max);
 
@@ -147,7 +152,7 @@ public class ArrayAlgorithms {
         }
 
         for ( int i = 0; i < array.length; i++ ) {
-            Log.v(TAG, "Finla array:" + array[i]);
+            Log.v(TAG, "final array:" + array[i]);
         }
     }
 
@@ -180,7 +185,7 @@ public class ArrayAlgorithms {
         }
     }
 
-    void maximumofPerffectSqaure() {
+    void maximumofPerfectSquare() {
 
         int a[] = {16, 20, 25, 2, 3, 10};
         int n = a.length;
@@ -283,11 +288,11 @@ public class ArrayAlgorithms {
 
     }
 
-    void KSubarraySum() {
+    void KSubArraySum() {
 
         int a[] = {10, 11, 10, 11, 12};
         int n = a.length;
-        int k = 2; // SUbarray size
+        int k = 2; // SubArray size
 
         for ( int i = 0; i < n - k + 1; i++ ) {
 
@@ -300,7 +305,7 @@ public class ArrayAlgorithms {
         }
     }
 
-    void findallSubarrayWithSumK() {
+    void findAllSubArrayWithSumK() {
 
         int arr[] = {9, 4, 20, 3, 10, 5};
         int n = arr.length;
@@ -331,7 +336,7 @@ public class ArrayAlgorithms {
 
         int next = -1;
 
-        for ( int i = 0; i <n-1; i++ ) {
+        for ( int i = 0; i < n - 1; i++ ) {
 
 
             for ( int j = i + 1; j <= n; j++ ) {
@@ -343,6 +348,50 @@ public class ArrayAlgorithms {
             }
             Log.v(TAG, "Next greater Element :" + next);
         }
+    }
+
+    void slidingWindow() {
+        int arr[] = {100, 200, 300, 400};
+
+        int k = 2;
+        int sum_so_far = Integer.MIN_VALUE;
+
+        for ( int i = 0; i < arr.length - k + 1; i++ ) {
+
+            int sum = 0;
+
+            for ( int j = 0; j < k; j++ ) {
+                sum = sum + arr[i + j];
+            }
+            if (sum > sum_so_far) {
+                sum_so_far = sum;
+            }
+        }
+
+        Log.v(TAG, "Sliding window problem:" + sum_so_far);
 
     }
+
+    void SubArraySumEqualsK() {
+        int a[] = {9, 4, 20, 3, 10, 5};
+
+        int sum = 33;
+        int count  =0;
+
+        for ( int i= 0; i < a.length; i++ ) {
+
+            int sum_so_far = 0;
+
+            for ( int j = i; j <a.length; j++ ) {
+
+                sum_so_far = sum_so_far + a[j];
+
+                if (sum == sum_so_far)
+                    count++;
+            }
+        }
+        Log.v(TAG, "Sliding window problem:" + count);
+    }
+
+ 
 }
