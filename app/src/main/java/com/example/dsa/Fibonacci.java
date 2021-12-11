@@ -133,8 +133,6 @@ public class Fibonacci {
     void rotateLeftArray() {
         int a[] =  {1, 2, 3, 4, 5, 6, 7};
         int d = 2;
-
-
         for(int m=0;m<d;m++) {
             int temp = a[0];
 
@@ -147,6 +145,5 @@ public class Fibonacci {
         for(int j=0;j<a.length;j++) {
             Log.v(TAG,"Rotated Array is:"+a[j]);
         }
-
     }
 }
