@@ -11,7 +11,7 @@ public class practice {
     private final String TAG = practice.class.getSimpleName();
     public practice() {
 //        pyramidNumber1();
-       sumofDigits();
+      factorial();
     }
 
     //     Print the below sequence
@@ -148,6 +148,31 @@ public class practice {
         }
         Log.d(TAG, "sumofDigits: "+sum);
 
+    }
+
+    void reverseNUmber() {
+        int num = 2378532;
+        int reverser = 0;
+        int r = 0;
+
+        while(num!=0) {
+            r = num %10;
+            reverser = reverser*10 + r;
+            num = num/10;
+        }
+
+        Log.d(TAG, "reverseNUmber: "+reverser);
+    }
+
+    void factorial() {
+        int num =4;
+        int fact = 1;
+
+        for(int i=1;i<=num;i++) {
+            fact = fact* i;
+        }
+
+        Log.d(TAG, "factorial: "+fact);
     }
 
 
