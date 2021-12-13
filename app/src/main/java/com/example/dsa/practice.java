@@ -8,9 +8,10 @@ import java.util.Map;
 
 public class practice {
 
+    private final String TAG = practice.class.getSimpleName();
     public practice() {
 //        pyramidNumber1();
-        printPattern();
+       sumofDigits();
     }
 
     //     Print the below sequence
@@ -111,6 +112,55 @@ public class practice {
         }
     }
 
+    void smallestGreatest() {
+        int[] arr = getRandomArray(10);
+
+        for ( int i =0;i<arr.length;i++) {
+            Log.d("TAG", "Input : "+arr[i]);
+        }
+
+        int smallest = Integer.MAX_VALUE;
+        int largest = Integer.MIN_VALUE;
+
+        for(int i=0;i< arr.length;i++) {
+            if(arr[i] > largest) {
+                largest = arr[i];
+            }
+            if(arr[i] < smallest) {
+                smallest = arr[i];
+            }
+        }
+
+        Log.d("TAG", "smallestGreatest: Smallest:"+smallest + " Largest:"+largest);
+    }
+
+    void sumofDigits() {
+
+        int num = 12334;
+
+        int r=0;
+        int sum =0;
+
+        while(num!=0) {
+            r = num%10;
+            sum = sum +r;
+            num = num /10;
+        }
+        Log.d(TAG, "sumofDigits: "+sum);
+
+    }
+
+
+
+    public static int[] getRandomArray(int length) {
+        int[] randomArray = new int[length];
+
+        for ( int i = 1; i < length; i++ ) {
+
+            randomArray[i] = (int) (Math.random() * 5);
+        }
+        return randomArray;
+    }
 
 
 }
