@@ -11,7 +11,7 @@ public class practice {
     private final String TAG = practice.class.getSimpleName();
     public practice() {
 //        pyramidNumber1();
-      factorial();
+     isMagic();
     }
 
     //     Print the below sequence
@@ -173,6 +173,30 @@ public class practice {
         }
 
         Log.d(TAG, "factorial: "+fact);
+    }
+
+    void isMagic() {
+        int num = 50113;
+
+        int r = 0;
+        int sum  = 0;
+
+        while (num!=0 || sum >= 9) {
+
+            if(sum >9 ) {
+               num = sum;
+               sum =0;
+            }
+
+            r = num %10;
+            sum= sum + r;
+            num = num /10;
+        }
+
+        if(sum==1) {
+            Log.d(TAG, "isMagic: number");
+        }
+
     }
 
 
