@@ -196,7 +196,6 @@ public class practice {
         if(sum==1) {
             Log.d(TAG, "isMagic: number");
         }
-
     }
 
 
