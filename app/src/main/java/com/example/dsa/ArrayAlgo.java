@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Stack;
 
 public class ArrayAlgo {
 
@@ -675,6 +676,35 @@ public class ArrayAlgo {
         }
         Log.v(TAG, "===>>> Largest Product:" + largest);
         Log.v(TAG, "===>>> Second largest  Product:" + secondLargest);
+    }
+
+
+//    previous smallest Element
+//    previous largest element
+//    Next smallest element
+//    Next largest element
+
+    void nextLargestElement() {
+        int[] a = {4, 10, 5, 8, 20, 15, 3, 12};
+
+        Stack<Integer> stack = new Stack<>();
+
+        for(int i=a.length-1;i>=0;i--) {
+
+            while(!stack.isEmpty() && stack.peek()<=a[i]) {
+                stack.pop();
+            }
+
+            if(stack.isEmpty()) {
+                Log.d(TAG, "nextLargestElement: "+a[i] + " is :" + -1);
+            } else {
+                Log.d(TAG, "nextLargestElement: "+a[i] + " is :"+stack.peek());
+            }
+
+            stack.push(a[i]);
+
+        }
+
     }
 
 

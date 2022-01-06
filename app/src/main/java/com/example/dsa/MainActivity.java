@@ -26,6 +26,23 @@ public class MainActivity extends AppCompatActivity {
 //
 ////        ArrayAlgorithms arrayAlgorithms = new ArrayAlgorithms();
 
+        QueueImpl queue  = new QueueImpl();
+
+        queue.enQueue(10);
+        queue.enQueue(11);
+        queue.enQueue(12);
+        queue.enQueue(13);
+        queue.enQueue(14);
+
+        queue.display();
+
+        queue.deQueue();
+        queue.deQueue();
+
+//        queue.display();
+
+      ArrayAlgo arrayAlgo = new ArrayAlgo();
+      arrayAlgo.nextLargestElement();
 
     }
 }
