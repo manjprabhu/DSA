@@ -684,28 +684,86 @@ public class ArrayAlgo {
 //    Next smallest element
 //    Next largest element
 
-    void nextLargestElement() {
+
+    void previousLarge() {
         int[] a = {4, 10, 5, 8, 20, 15, 3, 12};
 
-        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> sTack = new Stack<>();
 
-        for(int i=a.length-1;i>=0;i--) {
-
-            while(!stack.isEmpty() && stack.peek()<=a[i]) {
-                stack.pop();
+        for(int i=0;i<a.length;i++) {
+            while(!sTack.isEmpty() && sTack.peek() <=a[i]) {
+                sTack.pop();
             }
 
-            if(stack.isEmpty()) {
-                Log.d(TAG, "nextLargestElement: "+a[i] + " is :" + -1);
+            if(sTack.isEmpty()) {
+                Log.d(TAG, "previousLarge: of "+ a[i] + " is:" + -1);
             } else {
-                Log.d(TAG, "nextLargestElement: "+a[i] + " is :"+stack.peek());
+                Log.d(TAG, "previousLarge: of "+ a[i] + " is:" + sTack.peek());
             }
 
-            stack.push(a[i]);
-
+            sTack.push(a[i]);
         }
 
     }
 
+     void previousSmall() {
+         int[] a = {4, 10, 5, 8, 20, 15, 3, 12};
+
+         Stack<Integer> stack = new Stack<>();
+
+         for(int i=0;i<a.length;i++) {
+
+             while (!stack.isEmpty() && stack.peek() >= a[i]) {
+                 stack.pop();
+             }
+
+             if(stack.isEmpty()) {
+                 Log.d(TAG, "previousSmall: of "+ a[i] + " is:" + -1);
+             } else {
+                 Log.d(TAG, "previousSmall: of "+ a[i] + " is:" + stack.peek());
+             }
+
+             stack.push(a[i]);
+         }
+     }
+
+     void nextSmallElement() {
+         int[] a = {4, 10, 5, 8, 20, 15, 3, 12};
+
+         Stack<Integer> stack = new Stack<>();
+
+         for(int i=a.length-1;i>=0;i--) {
+
+             while (!stack.isEmpty() && stack.peek() >= a[i]) {
+                 stack.pop();
+             }
+             if(stack.isEmpty()) {
+                 Log.d(TAG, "nextSmallElement: of "+ a[i] + " is:" + -1);
+             } else {
+                 Log.d(TAG, "nextSmallElement: of "+ a[i] + " is:" + stack.peek());
+             }
+
+             stack.push(a[i]);
+         }
+     }
+
+     void nextLargerElement() {
+         int[] a = {4, 10, 5, 8, 20, 15, 3, 12};
+
+         Stack<Integer> stack = new Stack<>();
+
+         for(int i=a.length-1;i>=0;i--){
+             while (!stack.isEmpty() && stack.peek() <=a[i]) {
+                 stack.pop();
+             }
+             if(stack.isEmpty()) {
+                 Log.d(TAG, "nextLargerElement: of "+ a[i] + " is:" + -1);
+             } else {
+                 Log.d(TAG, "nextLargerElement: of "+ a[i] + " is:" + stack.peek());
+             }
+
+             stack.push(a[i]);
+         }
+     }
 
 }
